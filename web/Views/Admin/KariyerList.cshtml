@@ -1,0 +1,97 @@
+﻿@model KariyerModel
+@{
+    Layout = "_AdminLayout";
+
+    var basvurular = Model.Kariyers;
+
+    var totalpages = Model.PageInfo.TotalPages();
+}
+
+<div class="box-">
+    <h1>
+        Başvurular
+    </h1>
+</div>
+
+<div class="clear" style="height: 10px;"></div>
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th class="hide">E-Mail</th>
+                <th class="hide">Telefon</th>
+                <th class="hide">Cv</th>
+                <th>
+                    <span class="fa fa-comment">Mesaj</span>
+                </th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Kariyers.Count > 0)
+            {
+                @foreach (var basvuru in basvurular)
+                {
+                    <tr>
+                        <td>
+                            <a href="#" class="title">
+                                @basvuru.Ad
+                            </a>
+                            <div class="magic-links">
+                                <form action="/admin/deleteCv" method="post">
+                                    <input type="hidden" name="id" value="@basvuru.KariyerId" />
+
+                                    @*<a type="submit" class="trash">Sil</a> |*@
+                                    <button onclick="return confirm('@basvuru.Ad isimli cvyi silmek istediğinize emin misiniz?')" type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+
+                            </div>
+                        </td>
+                        <td class="hide">
+                            <a href="#">@basvuru.Email</a>
+                        </td>
+                        <td class="hide">
+                            <a href="#">@basvuru.Telephone</a>
+                        </td>
+                        <td class="hide">
+                            <a class="btn btn-sm" href="~/Cvler/@basvuru.CvUrl">Cv Gör</a>
+                        </td>
+                        <td>
+                            @basvuru.Message
+                        </td>
+                        <td>
+                            <span class="date">@basvuru.BasvuruTarihi</span>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <div class="alert">
+                    <h3>Başvuru bulunamadı</h3>
+                </div>
+            }
+
+
+
+        </tbody>
+    </table>
+</div>
+<div class="pagination">
+    <ul>
+        @for (int i = 0; i < totalpages; i++)
+        {
+
+            <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")"><a href="/admin/kariyer?page=@(i+1)">@(i+1)</a></li>
+
+
+
+
+
+        }
+    </ul>
+</div>
+
+

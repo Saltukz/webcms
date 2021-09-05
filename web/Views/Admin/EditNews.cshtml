@@ -1,0 +1,96 @@
+﻿@model HaberlerModel
+@{
+    Layout = "_AdminLayout";
+
+
+}
+
+
+
+<div class="content">
+
+    <div class="box-">
+        <h1>
+            Haber Edit
+        </h1>
+    </div>
+
+    <div class="clear" style="height: 10px;"></div>
+
+    <div class="box-">
+        <form asp-controller="Admin" asp-action="EditNewsSubmit" method="POST" enctype="multipart/form-data" class="form label">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="NewsId" />
+            <input type="hidden" asp-for="Code" />
+            <input type="hidden" asp-for="SeoUrl" />
+            <input type="hidden" asp-for="MetaDescription"/>
+            <ul>
+                <li>
+                    <label asp-for="Culture"></label>
+                    <div class="form-content">
+                        <select asp-for="Culture">
+                            <option selected value="@Model.Culture">@Model.Culture</option>
+                        </select>
+                        <span asp-validation-for="Culture" class="text-danger"></span>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Title"></label>
+                    <div class="form-content">
+                        <input asp-for="Title">
+                        <p>
+                            Haberin başlığı
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="ShortDescription"></label>
+                    <div class="form-content">
+                        <input asp-for="ShortDescription">
+                        <p>
+                            Haberler sayfasında görünecek olan kısa açıklama.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Description"></label>
+                    <div class="form-content">
+                        <textarea id="editor" asp-for="Description" cols="30" rows="5"></textarea>
+
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="file">Haber Resmi</label>
+                    <div class="form-content">
+                        <input type="hidden" asp-for="ImageUrl" />
+                        <img src="~/images/News/@Model.ImageUrl" />
+                        <input asp-for="file">
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="MetaTags"></label>
+                    <div class="form-content">
+                        <input asp-for="MetaTags">
+                        <p>
+                            Arama motoru için meta tagları kelime kelime arada boşluk bırakarak giriniz. Örneğin "Işık Plastik,Growtech,Kocaeli"
+                        </p>
+                    </div>
+                </li>
+                <li>
+                <li class="submit">
+                    <button type="submit">Güncelle</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+         CKEDITOR.replace('editor');
+    </script>
+
+}

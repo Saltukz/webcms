@@ -1,0 +1,56 @@
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.deps.json
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.dll
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.pdb
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.entity.dll
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.entity.pdb
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csprojAssemblyReference.cache
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.AssemblyInfoInputs.cache
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.AssemblyInfo.cs
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csproj.CoreCompileInputs.cache
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csproj.CopyComplete
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.dll
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.pdb
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.deps.json
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.dll
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.pdb
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.entity.dll
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.entity.pdb
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csprojAssemblyReference.cache
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.AssemblyInfoInputs.cache
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.AssemblyInfo.cs
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csproj.CoreCompileInputs.cache
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csproj.CopyComplete
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.dll
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.pdb
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.deps.json
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.dll
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.business.pdb
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.entity.dll
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\bin\Debug\netcoreapp3.1\isik.entity.pdb
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csprojAssemblyReference.cache
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.AssemblyInfo.cs
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.csproj.CopyComplete
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.dll
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.business\obj\Debug\netcoreapp3.1\isik.business.pdb
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\bin\Debug\netcoreapp3.1\isik.business.deps.json
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\bin\Debug\netcoreapp3.1\isik.business.dll
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\bin\Debug\netcoreapp3.1\isik.business.pdb
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\bin\Debug\netcoreapp3.1\entity.dll
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\bin\Debug\netcoreapp3.1\entity.pdb
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\obj\Debug\netcoreapp3.1\isik.business.csprojAssemblyReference.cache
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\obj\Debug\netcoreapp3.1\isik.business.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\obj\Debug\netcoreapp3.1\isik.business.AssemblyInfo.cs
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\obj\Debug\netcoreapp3.1\isik.business.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\obj\Debug\netcoreapp3.1\isik.business.csproj.CopyComplete
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\obj\Debug\netcoreapp3.1\isik.business.dll
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\obj\Debug\netcoreapp3.1\isik.business.pdb
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\bin\Debug\netcoreapp3.1\data.dll
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.business\bin\Debug\netcoreapp3.1\data.pdb

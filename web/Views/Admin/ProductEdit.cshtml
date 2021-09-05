@@ -1,0 +1,203 @@
+﻿@model ProductModel
+@{
+    Layout = "_AdminLayout";
+
+    var categories = Model.categories;
+}
+
+
+
+<div class="content">
+
+    <div class="box-">
+        <h1>
+            Ürün Edit
+        </h1>
+    </div>
+
+    <div class="clear" style="height: 10px;"></div>
+
+    <div class="box-">
+
+
+
+        <form asp-controller="Admin" asp-action="ProductEditMethod" method="POST" enctype="multipart/form-data" class="form label">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="ProductId" />
+            
+
+
+            <ul>
+                <li>
+                    <label asp-for="Culture"></label>
+                    <div class="form-content">
+                        <select asp-for="Culture">
+                            <option selected value="tr">Türkçe</option>
+                        </select>
+                        <span asp-validation-for="Culture" class="text-danger"></span>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Code"></label>
+                    <div class="form-content">
+                        <input asp-for="Code">
+                        <p>
+                            Ürün Kodu
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="UstGenislik"></label>
+                    <div class="form-content">
+                        <input asp-for="UstGenislik">
+                        <p>
+                            Üst Genişlik
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Renk"></label>
+                    <div class="form-content">
+                        <input asp-for="Renk">
+                        <p>
+                            Renk
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="UstCap"></label>
+                    <div class="form-content">
+                        <input asp-for="UstCap">
+                        <p>
+                            Üst Çap
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="AltCap"></label>
+                    <div class="form-content">
+                        <input asp-for="AltCap">
+                        <p>
+                            Alt Çap
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="TbCap"></label>
+                    <div class="form-content">
+                        <input asp-for="TbCap">
+                        <p>
+                            Tb Çap
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Yukseklik"></label>
+                    <div class="form-content">
+                        <input asp-for="Yukseklik">
+                        <p>
+                            Yükseklik
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Hacim"></label>
+                    <div class="form-content">
+                        <input asp-for="Hacim">
+                        <p>
+                            Hacim
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="TamHacim"></label>
+                    <div class="form-content">
+                        <input asp-for="TamHacim">
+                        <p>
+                            Tam Hacim
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Baski"></label>
+                    <div class="form-content">
+                        <select asp-for="Baski">
+                            <option value="1">Evet</option>
+                            <option value="0">Hayır</option>
+                        </select>
+                        <p>
+                            Baskı
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="SosisIciAdet"></label>
+                    <div class="form-content">
+                        <input asp-for="SosisIciAdet">
+                        <p>
+                            Sosis İçi Adet
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="KoliIciAdet"></label>
+                    <div class="form-content">
+                        <input asp-for="KoliIciAdet">
+                        <p>
+                            Koli İçi Adet
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="file">Haber Resmi</label>
+                    <div class="form-content">
+                        <input asp-for="file">
+                        <img src="~/dosyalar/thermoformresimler/@Model.ImageUrl" width="80" alt="Alternate Text" />
+                    </div>
+                </li>
+
+                
+
+
+                <li>
+
+                    <div class="form-content">
+
+                        <div class="checklist">
+                            <h3 style="font-weight:bold;">Kategori</h3>
+                            <div class="list">
+
+                                @foreach (var item in categories)
+                                {
+                                    <label for="category_@item.CategoryId">
+                                        @item.Code
+                                        <input @(Model.Selectedcategories.Contains(item.CategoryId)? "checked" : "") name="ThermoformCategoryIds" class="checkbox"
+                                               type="checkbox" id="category_@item.CategoryId"
+                                               value="@item.CategoryId">
+                                    </label>
+                                }
+
+
+                            </div>
+
+                        </div>
+                        <p>Kategori seçimi</p>
+                    </div>
+                </li>
+
+
+                <li>
+                <li class="submit">
+                    <button type="submit">Gönder</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</div>
+

@@ -1,0 +1,68 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model BigViewModel
+@{
+    Layout = "_Layout";
+    var kategoriler = Model.DokumanModel.dokumanCategories;
+    var dokumanlar = Model.DokumanModel.dokumanlar;
+
+    var relation = Model.DokumanModel.relation;
+ 
+}
+
+@section head {
+    <meta name="description" content="@localizer["description"]">
+    <meta name="keywords" content="@localizer["keywords"]">
+    <title>@localizer["Title"] | Işık Plastik</title>
+}
+@section css {
+
+}
+<div class="container">
+    <h2>Dokumanlar</h2>
+
+    
+
+    <div class="panel-group" id="accordion">
+
+
+
+        @foreach (var item in kategoriler)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse@(item.DokumanCategoryId)">@item.Name</a>
+                    </h4>
+                </div>
+                <div id="collapse@(item.DokumanCategoryId)" class="panel-collapse collapse">
+                    @foreach (var dokuman in dokumanlar)
+                    {
+
+                        @foreach (var relate in relation)
+                        {
+                            if (relate.Item1 == dokuman.DokumanId && relate.Item2.Contains(item.DokumanCategoryId))
+                            {
+                                <ul class="list-group">
+                                    <li class="list-group-item"><a href="@dokuman.DokumanUrl">@dokuman.Name</a></li>
+                                </ul>
+                            }
+                        }
+
+                    }
+                </div>
+            </div>
+
+
+        }
+
+
+    </div>
+</div>
+
+
+@section Scripts {
+
+
+}
+
+

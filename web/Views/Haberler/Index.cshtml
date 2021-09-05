@@ -1,0 +1,32 @@
+﻿@model BigViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+    var haberler = Model.HaberlerModel.News;
+}
+
+@section head {
+    <meta name="description" content="@localizer["description"]">
+    <meta name="keywords" content="@localizer["keywords"]">
+    <title>@localizer["Title"] | Işık Plastik</title>
+}
+
+
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var haber in haberler)
+        {
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/images/News/@haber.ImageUrl" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@haber.Title</h5>
+                    <p class="card-text">@haber.ShortDescription</p>
+                    <a asp-action="Details" asp-controller="Haberler" asp-route-seocode="@haber.SeoUrl" class="btn btn-primary">@localizer["incele"]</a>
+                </div>
+            </div>
+        </div>
+                }
+        </div>
+</div>

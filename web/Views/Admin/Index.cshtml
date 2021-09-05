@@ -1,0 +1,61 @@
+﻿@model AnalyticsViewModel
+@using Google.Apis.AnalyticsReporting.v4.Data
+@{
+    Layout = "_AdminLayout";
+}
+
+@section adminhead {
+
+    <title>Admin Anasayfa | Işık Plastik</title>
+
+
+    <style>
+
+        #divAnalytics {
+            display: grid;
+            grid-template-columns: 100px auto 100px 100px;
+            grid-gap: 8px;
+        }
+
+
+
+            #divAnalytics div:nth-child(-n+4) {
+                font-weight: bold;
+            }
+    </style>
+
+}
+<div id="divAnalytics">
+
+    <div>pagePath</div>
+
+    <div>pageTitle</div>
+
+    <div>pageViews</div>
+
+    <div>users</div>
+
+    @foreach (ReportRow row in Model.AnalyticsRecords)
+
+    {
+
+        @foreach (string dimension in row.Dimensions)
+
+        {
+
+            <div>@dimension</div>
+
+        }
+
+
+
+        @foreach (var metric in row.Metrics[0].Values) // row.Metrics is a list of DateRangeValuess (double 'ss' is intentional), however we only have 1 DateRangeValues so we just use row.Metrics[0].
+        {
+
+            <div>@metric</div>
+
+        }
+
+    }
+
+</div>

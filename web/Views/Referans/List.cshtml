@@ -1,0 +1,138 @@
+﻿@model BigViewModel
+@{
+    var gallery = Model.ProjectModel.projectGaleries;
+    var proje = Model.ProjectModel.project;
+
+    var list = Model.ProjectModel.projeList;
+
+    var firstOne = Model.ProjectModel.firstOne;
+
+    var menuList = Model.ProjectModel.menuList;
+
+
+}
+@section head {
+    <title>@proje.Name | Işık Plastik</title>
+    <meta name="description" content="@proje.MetaDescription">
+
+}
+@section css {
+    <link href="~/css/projecss.css" rel="stylesheet">
+}
+<!-- Page Menu -->
+<div class="page-menu menu-lines" style="margin-bottom: 30px;">
+    <div class="container">
+        <nav>
+            <ul id="myBtnContainer">
+                <li id="projectbtn" class="btn active" onclick="filterSelection('all')"><a>Hepsi</a></li>
+                @foreach (var menu in menuList)
+                {
+                    <li id="projectbtn" class="btn" onclick="filterSelection('@menu')"><a>@menu</a></li>
+                }
+
+            </ul>
+        </nav>
+        <div id="pageMenu-trigger">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</div>
+
+<div class="genelcontainer">
+    @foreach (var galeri in gallery)
+    {
+        <div class="alancontainer @galeri.ProjeAlani">
+            <section class="p-t30 p-b-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 m-b-30" data-animate="fadeInLeft">
+
+                            <div class="carousel" data-items="1">
+                                <a href="~/images/projeler/yapı/vadi-istanbul-aa.jpg"><img src="~/images/projeler/yapı/vadi-istanbul-aa.jpg" alt=""></a>
+                                <a href="~/images/projeler/yapı/vadi-istanbul-bb.jpg"><img src="~/images/projeler/yapı/vadi-istanbul-bb.jpg" alt=""></a>
+                                <a href="~/images/projeler/yapı/vadi-istanbul-cc.jpg"><img src="~/images/projeler/yapı/vadi-istanbul-cc.jpg" alt=""></a>
+                                <a href="~/images/projeler/yapı/vadi-istanbul-DD.jpg"><img src="~/images/projeler/yapı/vadi-istanbul-DD.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 p-l-40 p-r-40" data-animate="fadeInRight">
+                            <div class="m-b-40">
+                                <h2>@galeri.Name</h2>
+                                <p>
+                                    @if (galeri.UrunAdi != null)
+                                    {
+                                        <strong>Ürün:</strong> @galeri.UrunAdi<br>
+                                    }
+                                    @if (galeri.AlanOlcumu != null)
+                                    {
+                                        <strong>Toplam:</strong> @galeri.AlanOlcumu<br>
+                                    }
+                                    @if (galeri.YapimYili != null)
+                                    {
+                                        <strong>Yapım Yılı:</strong> @galeri.YapimYili
+                                    }
+
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- end: Page Menu -->
+
+    }
+</div>
+@section Scripts {
+    <script>
+        filterSelection("all") // Execute the function and show all columns
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("alancontainer");
+            if (c == "all") c = "";
+            // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        // Show filtered elements
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        // Hide elements that are not selected
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+}
+

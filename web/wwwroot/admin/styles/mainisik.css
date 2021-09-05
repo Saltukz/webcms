@@ -1,0 +1,18 @@
+﻿.checklist{
+    border:1px solid #ccc;
+    background:#fff;
+    max-width:400px;
+    padding:10px;
+}
+.checklist .list label{
+    float:none;
+    display:inline-block !important;
+    width:auto !important;
+    font-weight:normal !important;
+    margin-right:10px;
+}
+.checklist .list{
+    padding-bottom:15px;
+}
+
+

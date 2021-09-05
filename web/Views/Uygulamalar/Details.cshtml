@@ -1,0 +1,31 @@
+﻿@model BigViewModel
+@{
+    var levhalar = Model.UygulamalarModel.uygulama;
+  
+
+    
+}
+@section head {
+    <title>@levhalar.Name | Işık Plastik</title>
+    <meta name="description" content="@levhalar.MetaDescription">
+
+}
+
+
+
+<section id="welcome" class="p-b-0">
+    <div class="container">
+
+        <div class="row" data-animate="fadeInUp">
+            <div class="col-lg-12">
+                <img class="img-fluid" src="~/images/levhalar/@levhalar.SayfaResmi" alt="@levhalar.Name">
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Raw(levhalar.Description)
+
+
+
+

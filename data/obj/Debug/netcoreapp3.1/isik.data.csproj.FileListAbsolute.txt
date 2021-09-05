@@ -1,0 +1,60 @@
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.entity.dll
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csprojAssemblyReference.cache
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.AssemblyInfoInputs.cache
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.AssemblyInfo.cs
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.deps.json
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.runtimeconfig.json
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.runtimeconfig.dev.json
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.entity.pdb
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csproj.CoreCompileInputs.cache
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csproj.CopyComplete
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\Saltuk\Desktop\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.genruntimeconfig.cache
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.deps.json
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.runtimeconfig.json
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.runtimeconfig.dev.json
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.entity.dll
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.entity.pdb
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csprojAssemblyReference.cache
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.AssemblyInfoInputs.cache
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.AssemblyInfo.cs
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csproj.CoreCompileInputs.cache
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csproj.CopyComplete
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\Saltuk\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.genruntimeconfig.cache
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.deps.json
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.runtimeconfig.json
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.runtimeconfig.dev.json
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.entity.dll
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\bin\Debug\netcoreapp3.1\isik.entity.pdb
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csprojAssemblyReference.cache
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.AssemblyInfo.cs
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.csproj.CopyComplete
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\User\Desktop\isiknet2son\isik.net yedek 2\isik.data\obj\Debug\netcoreapp3.1\isik.data.genruntimeconfig.cache
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\bin\Debug\netcoreapp3.1\isik.data.deps.json
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\bin\Debug\netcoreapp3.1\isik.data.runtimeconfig.json
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\bin\Debug\netcoreapp3.1\isik.data.runtimeconfig.dev.json
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\bin\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\bin\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\bin\Debug\netcoreapp3.1\entity.dll
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\bin\Debug\netcoreapp3.1\entity.pdb
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\obj\Debug\netcoreapp3.1\isik.data.csprojAssemblyReference.cache
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\obj\Debug\netcoreapp3.1\isik.data.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\obj\Debug\netcoreapp3.1\isik.data.AssemblyInfo.cs
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\obj\Debug\netcoreapp3.1\isik.data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\obj\Debug\netcoreapp3.1\isik.data.csproj.CopyComplete
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\obj\Debug\netcoreapp3.1\isik.data.dll
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\obj\Debug\netcoreapp3.1\isik.data.pdb
+C:\Users\User\Desktop\dotnetcms\dotnetcms\isik.data\obj\Debug\netcoreapp3.1\isik.data.genruntimeconfig.cache

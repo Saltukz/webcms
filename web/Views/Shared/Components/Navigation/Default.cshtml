@@ -1,0 +1,85 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model LayoutModel
+@{
+    var categories = Model.categories;
+    var uygulamalar = Model.uygulamalar;
+    var projects = Model.projects;
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/uygulamalar">Uygulamalar</a>
+            </li>
+            @*<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Uygulamalar
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    @foreach (var uygulama in uygulamalar)
+                    {
+                        <a asp-action="Details" asp-controller="Uygulamalar" asp-route-seo="@uygulama.SeoUrl">@uygulama.Name</a>
+                    }
+
+
+                </div>
+            </li>*@
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Kategoriler
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    @foreach (var cat in categories)
+                    {
+
+                        <a asp-controller="kategori" asp-action="Details" asp-route-url="@cat.SeoUrl">@cat.Title</a>
+                    }
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Projeler
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    @foreach (var proje in projects)
+                    {
+                        <a asp-action="List" asp-controller="Referans" asp-route-pcode="@proje.Name">@proje.Name</a>
+                    }
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/haberler">Haberler</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/iletisim">İletişim</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Culture
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <partial name="_Culture" />
+                </div>
+            </li>
+
+
+
+        </ul>
+    </div>
+</nav>

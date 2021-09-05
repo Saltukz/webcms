@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    @RenderSection("adminhead", false)
+
+    <link rel="stylesheet" href="~/admin/styles/main.css">
+    <link rel="stylesheet" href="~/admin/styles/mainisik.css">
+</head>
+<body>
+
+    
+    <div class="content">
+        @if (TempData["message"] != null)
+        {
+            <partial name="_ResultMessage" model="@(TempData.Get<AlertMessage>("message"))" />
+        }
+        @RenderBody()
+
+    </div>
+
+
+
+    <script src="~/admin/scripts/jquery-1.12.2.min.js"></script>
+    <script src="~/node_modules/ckeditor/ckeditor.js"></script>
+    <script src="~/admin/scripts/admin.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+
+</html>

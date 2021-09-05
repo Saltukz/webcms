@@ -1,0 +1,37 @@
+﻿@model LoginModel
+@{
+    Layout = "_LoginLayout";
+}
+
+
+
+<div class="login-screen">
+
+    <!--login logo-->
+    <div class="login-logo">
+        <a href="#">
+            <img src="~/images/logo.png" alt="">
+        </a>
+    </div>
+
+    <form asp-controller="Account" asp-action="Login" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <ul>
+            <li>
+                <label asp-for="UserName">Username</label>
+                <input asp-for="UserName">
+            </li>
+            <li>
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password">
+            </li>
+            <li>
+                <button type="submit">Login</button>
+               
+            </li>
+        </ul>
+    </form>
+
+ 
+
+</div>

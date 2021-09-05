@@ -1,0 +1,118 @@
+﻿@model DokumanModel
+@{
+    Layout = "_AdminLayout";
+
+    var kodlar = Model.Codes;
+
+    var allcultures = Model.AllCultures;
+
+    var dokumancategories = Model.dokumanCategories;
+}
+
+
+
+<div class="content">
+
+    <div class="box-">
+        <h1>
+            Dokuman Kategori Ekle
+        </h1>
+    </div>
+
+    <div class="clear" style="height: 10px;"></div>
+
+    <div class="box-">
+
+        <form asp-controller="Admin" asp-action="GetSelectDokuman" method="POST" enctype="multipart/form-data" class="form label">
+            <select asp-for="RequestedData" onchange="this.form.submit();">
+
+                <option disabled selected>Seçiniz</option>
+                @foreach (var kod in kodlar)
+                {
+                    <option value="@kod">@kod</option>
+                }
+
+            </select>
+        </form>
+
+
+
+        <form asp-controller="Admin" asp-action="DokumanAddLangMethod" method="POST" enctype="multipart/form-data" class="form label">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="RequestedData" />
+            <ul>
+                <li>
+                    <label asp-for="Culture"></label>
+                    <div class="form-content">
+                        <select asp-for="Culture">
+
+
+                            @foreach (var item in allcultures)
+                            {
+
+
+
+                                <option value="@item">@item</option>
+
+                            }
+                        </select>
+                        <span asp-validation-for="Culture" class="text-danger"></span>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Name"></label>
+                    <div class="form-content">
+                        <input asp-for="Name">
+                        <p>
+                            Döküman Adı
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="file"></label>
+                    <div class="form-content">
+                        <input asp-for="file">
+                        <p>
+                            Döküman Dosyası
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+
+                    <div class="form-content">
+
+                        <div class="checklist">
+                            <h3 style="font-weight:bold;">Kategori</h3>
+                            <div class="list">
+
+                                @foreach (var item in dokumancategories)
+                                {
+                                    <label>
+                                        @item.Code
+                                        <input name="DokumanCategoryIds" class="checkbox"
+                                               type="checkbox" id="category_@item.DokumanCategoryId"
+                                               value="@item.DokumanCategoryId">
+                                    </label>
+                                }
+
+
+                            </div>
+
+                        </div>
+                        <p>Kategori seçimi</p>
+                    </div>
+                </li>
+
+
+                <li>
+                <li class="submit">
+                    <button type="submit">Gönder</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</div>
+

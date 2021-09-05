@@ -1,0 +1,135 @@
+﻿@model BigViewModel
+@{
+    var category = Model.CategoryModel.category;
+    var products = Model.CategoryModel.products;
+
+    var renk = ViewData["Color"] != null ? ViewData["Color"] : "Transpalent";
+}
+@section head {
+    <title>@category.Title | Işık Plastik</title>
+    <meta name="description" content="@category.MetaDescription">
+
+}
+
+@section css {
+    <link rel="stylesheet" href="~/tabaklarcss/bardaklar_style.css">
+}
+
+<section id="page-title" ba data-bg-parallax="~/images/parallax/@category.ImageUrl">
+    <div class="parallax-container img-loaded" data-bg="~/images/parallax/ayran_image.jpg" data-velocity="-.140" style="background: url(&quot;/images/parallax/ayran_image.jpg&quot;) 0px;" data-ll-status="loaded"></div>
+    <div class="container" style="min-height:330px;">
+
+
+    </div>
+</section>
+<!-- end: CAROUSEL -->
+<!-- ABOUT -->
+<!-- Page Content -->
+<!-- end: content -->
+
+<section>
+
+    <div class="container">
+        <div class="row m-b-20">
+            <div class="col-lg-12 p-t-10 m-b-20">
+                <h1>@category.Title</h1>
+                <p>
+                    @Html.Raw(category.Description)
+                </p>
+
+
+            </div>
+            <!--Product list-->
+            <div class="shop">
+                <!-- URUN KODLARI : BAŞLA -->
+                <div class="vvpk-tablo">
+
+                    <div class="m-row">
+                        <div class="vvpk-row header">
+                            <div class="vvpk-cl">Ürün Kodu</div>
+                            <div class="vvpk-cl">Renk</div>
+                            <div class="vvpk-cl">Üst Çap</div>
+                            <div class="vvpk-cl">Alt Çap</div>
+                            <div class="vvpk-cl">Yükseklik</div>
+                            <div class="vvpk-cl">Hacim</div>
+                            <div class="vvpk-cl">Tam Hacim</div>
+                            <div class="vvpk-cl">Baskı</div>
+                            <div class="vvpk-cl">Sosis İçi Ad.</div>
+                            <div class="vvpk-cl">Koli İçi Ad.</div>
+                        </div>
+                        <div class="vvpk-row">
+                            @foreach (var product in products)
+                            {
+                                <div class="vvpk-cl">@product.Code</div>
+                                <div class="vvpk-cl">@product.Renk</div>
+                                <div class="vvpk-cl">@product.UstCap</div>
+                                <div class="vvpk-cl">@product.AltCap</div>
+                                <div class="vvpk-cl">@product.Yukseklik</div>
+                                <div class="vvpk-cl">@product.Hacim</div>
+                                <div class="vvpk-cl">@product.TamHacim</div>
+
+
+                                @if (product.Baski == 1)
+                                {
+                                    <div class="vvpk-cl"><i class="fa fa-check" aria-hidden="true"></i></div>
+                                }
+                                else
+                                {
+                                    <div class="vvpk-cl"><i class="fa fa-times" aria-hidden="true"></i></div>
+                                }
+                                <div class="vvpk-cl">@product.SosisIciAdet</div>
+                                <div class="vvpk-cl">@product.KoliIciAdet</div>
+                            }
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- URUN KODLARI : BİTİR -->
+
+
+        @*<div class="vvpk-tablo strenkler">
+            <div class="vvpk-row header">
+                <div class="vvpk-cl">Standart Renkler</div>
+            </div>
+            <div class="vvpk-row">
+                <div class="vvpk-cl pembe">Pembe</div>
+                <div class="vvpk-cl sari">Sarı</div>
+                <div class="vvpk-cl kirmizi">Kırmızı</div>
+                <div class="vvpk-cl turuncu">Turuncu</div>
+                <div class="vvpk-cl yesil">Yeşil</div>
+                <div class="vvpk-cl lacivert">Lacivert</div>
+                <div class="vvpk-cl acik-mavi">Açık Mavi</div>
+                <div class="vvpk-cl lila">Lila</div>
+                <div class="vvpk-cl krem">Krem</div>
+                <div class="vvpk-cl beyaz">Beyaz</div>
+            </div>
+        </div>*@
+
+        <div class="shop">
+            <div class="grid-layout grid-4-columns grid-loaded" data-item="grid-item" style="margin: 0px -20px -20px 0px; position: relative; height: 956.438px;">
+
+                @foreach (var product in products)
+                {
+                <div class="grid-item" style="padding: 0px 20px 20px 0px; position: absolute; left: 0px; top: 0px;">
+                    <div class="product">
+                        <div class="product-image">
+                            <a>
+                                <img alt="@product.Code" src="~/images/thermoformurunresimler/@product.ImageUrl">
+                            </a>
+                            <p style="color: white; background-color: black; text-align: center; height: 35px" data-lightbox="ajax">@product.Code</p>
+                        </div>
+                    </div>
+                </div>
+                }
+                
+            </div>
+        </div>
+
+</section>

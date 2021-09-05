@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'exo2 regular';
+	src: url('exo2-regular-webfont.eot');
+	src: url('exo2-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('exo2-regular-webfont.woff') format('woff'),
+		url('exo2-regular-webfont.ttf') format('truetype'),
+		url('exo2-regular-webfont.svg') format('svg');
+}

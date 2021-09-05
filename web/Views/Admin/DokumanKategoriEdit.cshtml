@@ -1,0 +1,56 @@
+﻿@model DokumanModel
+@{
+    Layout = "_AdminLayout";
+
+
+}
+
+
+
+<div class="content">
+
+    <div class="box-">
+        <h1>
+            Dokuman Kategori Edit
+        </h1>
+    </div>
+
+    <div class="clear" style="height: 10px;"></div>
+
+    <div class="box-">
+
+
+
+        <form asp-controller="Admin" asp-action="EditDokumanCategorySubmit" method="POST" class="form label">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Code" />
+            <input type="hidden" asp-for="DokumanCategoryId" />
+            <ul>
+                <li>
+                    <label asp-for="Culture"></label>
+                    <div class="form-content">
+                        <select asp-for="Culture">
+                            <option selected value="@Model.Culture">@Model.Culture</option>
+                        </select>
+                        <span asp-validation-for="Culture" class="text-danger"></span>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Name"></label>
+                    <div class="form-content">
+                        <input asp-for="Name">
+                        <p>
+                            Döküman Adı
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                <li class="submit">
+                    <button type="submit">Gönder</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</div>

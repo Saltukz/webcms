@@ -1,0 +1,157 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model BigViewModel
+@using Microsoft.Extensions.Options
+@using DNTCaptcha.Core
+@inject IOptions<DNTCaptchaOptions> Options
+
+
+@{
+    var returnUrl = string.IsNullOrWhiteSpace(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
+    var culture = System.Threading.Thread.CurrentThread.CurrentCulture.ToString();
+    var refreshButtonId = Options.Value.CaptchaClass + "RefreshButton";
+}
+
+@if (culture == "tr")
+{
+    <div class="sidebar-contact">
+        <div class="toggle"></div>
+        <div class="scroll">
+            <h2>Formu doldurun</h2>
+            <h2>BİZ SİZİ ARAYALIM</h2>
+            <form asp-action="contactme" asp-controller="Home" method="post" asp-route-returnUrl="@returnUrl" asp-antiforgery="true" id="contactform">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+
+                <label asp-for="FormModelContact.AdiSoyadi">İsim</label>
+                <input asp-for="FormModelContact.AdiSoyadi" />
+                <span asp-validation-for="FormModelContact.AdiSoyadi" class="text-danger"></span>
+
+                <label asp-for="FormModelContact.Telefon">Telefon</label>
+                <input asp-for="FormModelContact.Telefon" id="contact-phone" />
+                <span asp-validation-for="FormModelContact.Telefon" class="text-danger"></span>
+
+                <label asp-for="FormModelContact.Email"></label>
+                <input asp-for="FormModelContact.Email" />
+                <span asp-validation-for="FormModelContact.Email" class="text-danger"></span>
+
+                <label asp-for="FormModelContact.Mesaj"></label>
+                <textarea asp-for="FormModelContact.Mesaj"></textarea>
+                <span asp-validation-for="FormModelContact.Mesaj" class="text-danger"></span>
+
+
+                <label asp-for="FormModelContact.Kampanya" style="font-size:11px">Kampanyalarımızdan Telefon,Sms ve Mail yoluyla haberdar olmak ister misiniz?</label>
+                <select asp-for="FormModelContact.Kampanya" style="background-position:unset !important;">
+                    <option selected value="1">Evet</option>
+                    <option value="0">Hayır</option>
+                </select>
+
+
+                <dnt-captcha asp-captcha-generator-max="999999"
+                             asp-captcha-generator-min="111111"
+                             asp-captcha-generator-language="English"
+                             asp-captcha-generator-display-mode="ShowDigits"
+                             asp-use-relative-urls="true"
+                             asp-placeholder="Güvenlik kodu."
+                             asp-font-name="Tahoma"
+                             asp-font-size="20"
+                             asp-fore-color="#333333"
+                             asp-back-color="#ccc"
+                             asp-text-box-class="text-area form-control"
+                             asp-text-box-template="<div class='input-group'><span class='input-group-prepend'><span class='input-group-text'><i class='fa fa-lock'></i></span></span>{0}</div>"
+                             asp-validation-error-message="Lütfen güvenlik kodunu giriniz."
+                             asp-validation-message-class="text-danger"
+                             asp-refresh-button-class="fa fa-refresh btn-sm"
+                             asp-show-refresh-button="true" />
+
+
+                <input style="background-color:red; margin-top:5px" type="submit" name="submit" value="Gönder" />
+
+
+
+
+
+            </form>
+        </div>
+    </div>
+}
+else
+{
+    <div class="sidebar-contact">
+        <div class="toggle"></div>
+        <div class="scroll">
+            <h2>Fill in the form.</h2>
+            <h2>We will contact you.</h2>
+            <form asp-action="contactme" asp-controller="Home" method="post" asp-route-returnUrl="@returnUrl" asp-antiforgery="true" id="contactform">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+
+                <label asp-for="FormModelContact.AdiSoyadi">Full Name</label>
+                <input asp-for="FormModelContact.AdiSoyadi" />
+                <span asp-validation-for="FormModelContact.AdiSoyadi" class="text-danger"></span>
+
+                <label asp-for="FormModelContact.Telefon">Telephone</label>
+                <input asp-for="FormModelContact.Telefon" id="contact-phone" />
+                <span asp-validation-for="FormModelContact.Telefon" class="text-danger"></span>
+
+                <label asp-for="FormModelContact.Email"></label>
+                <input asp-for="FormModelContact.Email" />
+                <span asp-validation-for="FormModelContact.Email" class="text-danger"></span>
+
+                <label>Your message</label>
+                <textarea asp-for="FormModelContact.Mesaj"></textarea>
+                <span asp-validation-for="FormModelContact.Mesaj" class="text-danger"></span>
+
+
+                <label asp-for="FormModelContact.Kampanya" style="font-size:11px">Would you like to be informed about our campaigns via Phone, Sms and Mail?</label>
+                <select asp-for="FormModelContact.Kampanya" style="background-position:unset !important;">
+                    <option selected value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+
+
+                <dnt-captcha asp-captcha-generator-max="999999"
+                             asp-captcha-generator-min="111111"
+                             asp-captcha-generator-language="English"
+                             asp-captcha-generator-display-mode="ShowDigits"
+                             asp-use-relative-urls="true"
+                             asp-placeholder="Security code."
+                             asp-font-name="Tahoma"
+                             asp-font-size="20"
+                             asp-fore-color="#333333"
+                             asp-back-color="#ccc"
+                             asp-text-box-class="text-area form-control"
+                             asp-text-box-template="<div class='input-group'><span class='input-group-prepend'><span class='input-group-text'><i class='fas fa-lock'></i></span></span>{0}</div>"
+                             asp-validation-error-message="Plase enter security code"
+                             asp-validation-message-class="text-danger"
+                             asp-refresh-button-class="fas fa-redo btn-sm"
+                             asp-show-refresh-button="true" />
+                <input style="background-color:red; margin-top:5px" type="submit" name="submit" value="submit" />
+
+
+
+
+
+            </form>
+        </div>
+    </div>
+}
+
+
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+    function dataAjaxSuccess(data, status, xhr) {
+        alert('Success!');
+        $("#contactform #@refreshButtonId").click(); // refresh captcha
+    }
+    function dataAjaxFailure(xhr, status, error) {
+        alert('Failure! Try Again!');
+        $("#contactform #@refreshButtonId").click(); // refresh captcha
+    }
+    </script>
+}
+
+

@@ -1,0 +1,163 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+    
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @RenderSection("head", false)
+    <meta name="author" content="" />
+    @RenderSection("css", false)
+    <meta name="og:title" property="og:title" content="">
+
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:site" content="@("@yollabaskiya")" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:creator" content="" />
+
+    
+    <link href="~/node_modules/swiper/swiper-bundle.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/node_modules/font-awesome/css/font-awesome.css" />
+
+  
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styleS.css" />
+
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-192429286-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-192429286-1');
+    </script>
+
+
+
+
+</head>
+
+@await Component.InvokeAsync("Navigation")
+
+
+<body>
+    @if (TempData["message"] != null)
+    {
+        <partial name="_ResultMessage" model="@(TempData.Get<AlertMessage>("message"))" />
+    }
+
+    @await Component.InvokeAsync("ContactForm")
+
+
+
+
+
+    @RenderBody()
+
+
+
+
+
+
+
+
+
+    <partial name="_Footer" />
+</body>
+
+
+</html>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.toggle').click(function () {
+            $('.sidebar-contact').toggleClass('active')
+            $('.toggle').toggleClass('active')
+        })
+    })
+</script>
+
+
+
+<script src="~/js/mainJs.js"></script>
+
+<script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+
+<script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+
+<script src="~/node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
+
+<script src="~/node_modules/swiper/swiper-bundle.js"></script>
+
+<script src="~/node_modules/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script>
+
+<script type="text/javascript">
+    function phoneMask(e) {
+        var s = e.val();
+        var s = s.replace(/[_\W]+/g, '');
+        var n = s.length;
+        if (n < 11) { var m = '0(000)000-0000'; } else { var m = '0(000)000-0000'; }
+        $(e).mask(m);
+    }
+
+    // Type
+    $('body').on('keyup', '#contact-phone', function () {
+        phoneMask($(this));
+    });
+
+    // On load
+    $('#contact-phone').keyup();
+</script>
+
+
+
+
+@RenderSection("Scripts", required: false)
+
+
+<!-- Google Tag Manager -->
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P9X7CNK');
+</script>
+<!-- End Google Tag Manager -->
+
+<a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+
+<script>
+    $("#dil").mouseover(function () {
+        $(this)[0].size = $(this).find("option").length;
+    });
+    $("#dil").click(function () {
+        $(this)[0].size = 0;
+    });
+</script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+

@@ -1,0 +1,113 @@
+﻿@model CategoryModel
+@{
+    Layout = "_AdminLayout";
+
+
+}
+
+
+
+<div class="content">
+
+    <div class="box-">
+        <h1>
+            Kategori Edit
+        </h1>
+    </div>
+
+    <div class="clear" style="height: 10px;"></div>
+
+    <div class="box-">
+
+
+
+        <form asp-controller="Admin" asp-action="EditCategorySubmit" enctype="multipart/form-data"  method="POST" class="form label">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Code" />
+            <input type="hidden" asp-for="CategoryId" />
+            <input type="hidden" asp-for="Granuls" />
+            <ul>
+                <li>
+                    <label asp-for="Culture"></label>
+                    <div class="form-content">
+                        <select asp-for="Culture">
+                            <option selected value="@Model.Culture">@Model.Culture</option>
+                        </select>
+                        <span asp-validation-for="Culture" class="text-danger"></span>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Title"></label>
+                    <div class="form-content">
+                        <input asp-for="Title">
+                        <p>
+                            Döküman Adı
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="Description"></label>
+                    <div class="form-content">
+                        <textarea id="editor" asp-for="Description" cols="30" rows="5"></textarea>
+
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="SeoUrl"></label>
+                    <div class="form-content">
+                        <input asp-for="SeoUrl">
+                        <p>
+                            Kategorinin seo bilgisi boş bırakılırsa otomatik atanacaktır.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="MetaDescription"></label>
+                    <div class="form-content">
+                        <input asp-for="MetaDescription">
+                        <p>
+                            Meta Açıklaması.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="MetaTags"></label>
+                    <div class="form-content">
+                        <input asp-for="MetaTags">
+                        <p>
+                            Arama motoru için meta tagları kelime kelime arada boşluk bırakarak giriniz. Örneğin "Growtech,Vivapak vs.."
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="file"></label>
+                    <div class="form-content">
+                        <input asp-for="file">
+                        <img src="~/images/kategori/@Model.ImageUrl" alt="Alternate Text" style="width:30px;height:30px;" />
+                        <p>
+                            Resim ekle
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                <li class="submit">
+                    <button type="submit">Gönder</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        CKEDITOR.replace('editor');
+    </script>
+
+}

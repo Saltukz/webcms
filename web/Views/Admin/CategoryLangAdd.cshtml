@@ -1,0 +1,135 @@
+﻿@model CategoryModel
+@{
+    Layout = "_AdminLayout";
+
+    var kodlar = Model.Codes;
+
+    var allcultures = Model.AllCultures;
+}
+
+
+
+<div class="content">
+
+    <div class="box-">
+        <h1>
+            Kategori Dil Ekle
+        </h1>
+    </div>
+
+    <div class="clear" style="height: 10px;"></div>
+
+    <div class="box-">
+
+        <form asp-controller="Admin" asp-action="GetSelectedCategory" method="POST" enctype="multipart/form-data" class="form label">
+            <select asp-for="RequestedData" onchange="this.form.submit();">
+
+                <option disabled selected>Seçiniz</option>
+                @foreach (var kod in kodlar)
+                {
+                    <option value="@kod">@kod</option>
+                }
+
+            </select>
+        </form>
+
+
+
+        <form asp-controller="Admin" asp-action="CategoryAddLangMethod" method="POST" enctype="multipart/form-data" class="form label">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="RequestedData" />
+            <ul>
+                <li>
+                    <label asp-for="Culture"></label>
+                    <div class="form-content">
+                        <select asp-for="Culture">
+
+
+                            @foreach (var item in allcultures)
+                            {
+
+
+
+                                <option value="@item">@item</option>
+
+                            }
+                        </select>
+                        <span asp-validation-for="Culture" class="text-danger"></span>
+                    </div>
+                </li>
+                <li>
+                    <label asp-for="Title"></label>
+                    <div class="form-content">
+                        <input asp-for="Title">
+                        <p>
+                            Kategori Adı
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="Description"></label>
+                    <div class="form-content">
+                        <textarea id="editor" asp-for="Description" cols="30" rows="5"></textarea>
+
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="SeoUrl"></label>
+                    <div class="form-content">
+                        <input asp-for="SeoUrl">
+                        <p>
+                            Kategorinin seo bilgisi boş bırakılırsa otomatik atanacaktır.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="MetaDescription"></label>
+                    <div class="form-content">
+                        <input asp-for="MetaDescription">
+                        <p>
+                            Meta Açıklaması.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="MetaTags"></label>
+                    <div class="form-content">
+                        <input asp-for="MetaTags">
+                        <p>
+                            Arama motoru için meta tagları kelime kelime arada boşluk bırakarak giriniz. Örneğin "Proses,Tarım"
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <label asp-for="Granuls"></label>
+                    <div class="form-content">
+                        <select asp-for="Granuls">
+                            <option selected value="0">Hayır</option>
+                            <option value="1">Evet</option>
+                        </select>
+                        <span asp-validation-for="Granuls" class="text-danger"></span>
+                    </div>
+                </li>
+
+
+                <li>
+                <li class="submit">
+                    <button type="submit">Gönder</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        CKEDITOR.replace('editor');
+    </script>
+
+}

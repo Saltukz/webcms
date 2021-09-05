@@ -1,0 +1,21 @@
+﻿#projectbtn {
+    background-color: white;
+    border-color: white;
+}
+
+
+.alancontainer {
+    display: none; /* Hide columns by default */
+}
+/* Clear floats after rows */
+.genelcontainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+.show {
+    display: block;
+}

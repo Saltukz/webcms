@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'exo2-extralight';
+	src: url('exo2-extralight-webfont.eot');
+	src: url('exo2-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+		url('exo2-extralight-webfont.woff') format('woff'),
+		url('exo2-extralight-webfont.ttf') format('truetype'),
+		url('exo2-extralight-webfont.svg') format('svg');
+}

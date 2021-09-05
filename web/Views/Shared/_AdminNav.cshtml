@@ -1,0 +1,149 @@
+﻿@{ 
+    var pageAction = ViewContext.RouteData.Values["Action"].ToString();
+}
+
+
+<!--navbar-->
+<div class="navbar">
+    <ul dropdown>
+        <li>
+            <a href="/admin">
+                <span class="fa fa-home"></span>
+                <span class="title">
+                    Işık Plastik Admin Panel
+                </span>
+            </a>
+        </li>
+     
+       
+    </ul>
+</div>
+
+<!--sidebar-->
+<div class="sidebar">
+   
+    <ul>
+        <li class="@(pageAction == "KariyerList" ? "active" : "")">
+            <a href="/admin/kariyer">
+                <span class="fa fa-tachometer"></span>
+                <span class="title">
+                    Kariyer
+                </span>
+            </a>
+        </li>
+
+        <li class="@(pageAction == "iletisim" ? "active" : "")">
+            <a href="/admin/iletisim">
+                <span class="fa fa-tachometer"></span>
+                <span class="title">
+                    İletişim
+                </span>
+            </a>
+        </li>
+
+
+        <li class="@(pageAction == "dokumanlar" ? "active" : "")">
+            <a href="#">
+                <span class="fa fa-thumb-tack"></span>
+                <span class="title">
+                    Döküman Merkezi
+                </span>
+            </a>
+            <ul class="sub-menu">
+                <li class="active">
+                    <a href="/admin/dokuman-kategori">
+                        Döküman Kategori
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/dokumanlar">
+                        Dökümanlar
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="@(pageAction == "Haberler" ? "active" : "")">
+            <a href="/admin/haberler">
+                <span class="fa fa-thumb-tack"></span>
+                <span class="title">
+                    Haberler
+                </span>
+            </a>
+            <ul class="sub-menu">
+                <li class="active">
+                    <a href="/admin/haberler">
+                        Tüm Haberler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/haber-ekle">
+                        Haber Ekle
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li class="@(pageAction == "thermoform" ? "active" : "")">
+            <a href="#">
+                <span class="fa fa-thumb-tack"></span>
+                <span class="title">
+                    Kategoriler-Ürünler
+                </span>
+            </a>
+            <ul class="sub-menu">
+                <li class="active">
+                    <a href="/admin/kategoriler">
+                        Kategoriler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/urunler">
+                        Ürünler
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li class="@(pageAction == "uygulama" ? "active" : "")">
+            <a href="#">
+                <span class="fa fa-thumb-tack"></span>
+                <span class="title">
+                    Uygulamalar
+                </span>
+            </a>
+            <ul class="sub-menu">
+                <li class="active">
+                    <a href="/admin/uygulamalar">
+                        Uygulamalar
+                    </a>
+                </li>
+            
+            </ul>
+        </li>
+
+        <li class="@(pageAction == "cikis" ? "active" : "")">
+            <a href="/account/logout">
+                <span class="fa fa-tachometer"></span>
+                <span class="title">
+                    Çıkış
+                </span>
+            </a>
+        </li>
+
+
+        <a href="#" class="collapse-menu">
+            <span class="fa fa-arrow-circle-left"></span>
+            <span class="title">
+                Collapse menu
+            </span>
+        </a>
+
+
+
+
+</div>
+
+<!--content-->

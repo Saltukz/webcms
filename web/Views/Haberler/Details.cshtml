@@ -1,0 +1,16 @@
+﻿@model BigViewModel
+@{
+    var haber = Model.HaberDetailModel.New;
+}
+@section head {
+    <meta name="description" content="@haber.MetaDescription">
+
+    <title>@haber.Title | Işık Plastik</title>
+}
+
+
+<img src="~/images/News/@haber.ImageUrl" alt="@haber.Title" />
+<h3>@haber.Title</h3>
+
+<p>@Html.Raw(haber.Description)</p>
+

@@ -1,0 +1,90 @@
+﻿@model DokumanModel
+@{
+    Layout = "_AdminLayout";
+
+    var dokumanlar = Model.dokumanlar;
+
+    var totalpages = Model.PageInfo.TotalPages();
+
+
+}
+
+<div class="box-">
+    <h1>
+        Dökümanlar
+        <a href="/admin/dokuman-ekle">Döküman Ekle</a>
+        <a href="/admin/dokuman-dil-ekle">Döküman Dil Ekle</a>
+    </h1>
+</div>
+
+<div class="clear" style="height: 10px;"></div>
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Döküman Adı</th>
+                <th class="hide">Döküman Kodu</th>
+                <th class="hide">Döküman Dili</th>
+                <th class="hide">Döküman Url</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.dokumanlar.Count > 0)
+            {
+                @foreach (var dokuman in dokumanlar)
+                {
+            <tr>
+                <td>
+                    <a href="#" class="title">
+                        @dokuman.Name
+                    </a>
+                    <div class="magic-links">
+                        <form action="/admin/deletedokuman" method="post">
+                            <input type="hidden" name="id" value="@dokuman.DokumanId" />
+                            
+                            @*<a type="submit" class="trash">Sil</a> |*@
+                            <button onclick="return confirm('@dokuman.Name başlıklı kategoriyi silmek istediğinize emin misiniz? Bununla birlikte içindeki dokumanlarda silinecektir.')" type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                     
+                    </div>
+                </td>
+                <td class="hide">
+                    <a href="#">@dokuman.Code</a>
+                </td>
+                <td class="hide">
+                    <a href="#">@dokuman.Culture</a>
+                </td>
+                <td class="hide">
+                    <a href="#">@dokuman.DokumanUrl</a>
+                </td>
+            </tr>
+                }
+            }
+            else
+            {
+                <div class="alert">
+                    <h3>Kategori bulunamadı</h3>
+                </div>
+            }
+
+
+
+        </tbody>
+    </table>
+</div>
+<div class="pagination">
+    <ul>
+        @for (int i = 0; i < totalpages; i++)
+        {
+
+            <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")"><a href="/admin/dokumanlar?page=@(i+1)">@(i+1)</a></li>
+
+
+
+
+
+        }
+    </ul>
+</div>
