@@ -1,10 +1,10 @@
 {
   "type": "service_account",
   "project_id": "yollawebe-second",
-  "private_key_id": "fbe1b2ae556e0747bd1651e3aa5c1287c6de83a1",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAFvagVh5thiQA\nE1iBYfkSyEGfHYlhYIlOTJt5uoZFatbjio31L+fAb/sp76dTC5gEz82lglO2Hnfb\nHPnLTiwh/JIwIk4D42Yuhc1gMAdLxC2PXnyZ1MvjLccSWfvTpMBfQcEncfuZgv1/\nXaAfFwPmgZdg28l9EfQkqRBvIjiJx3n9ZO6Qsh6gSKkq+97M7W0/Zh/U5CjttDWp\nVxvFrnGhlRa7Nv5dxS5bHztLENo+fXv0KGX4SpmZrTfbi1maZL0bX8qi7KpJEXb7\nkXMO8rFUDqyQHqoK9H+pZdM7/YNr11xTl8JgBM4GL5r40oDWPWQ4UjMeL6Mvq8MF\nYnXuy9T3AgMBAAECggEAR8xNgsCtvuJUsnKIslOcdZjEbmTr5KngqJOZyXYemfPF\nPmebh/nP9e3lQ1eAg1niCGpjw2ljQL9CrXO3KnadqFZvje5Ems90cg8xJLLPB1Lc\ndKosiJMxYkjKD+Hybrk17mT1fXjtQgPkHKcyImzH2HC31ExSk50SVGGc8u0nlNeE\nu7QMVwm9A5AC7h6E61AN2ztswUzvv/ipRtEIKEa7yUVmDSI12qPvn9A2zmVBQtRk\nNhdLKPWf//PuAoVOMkFkEjCQ6jQgcg79oquLQ1ZVwFAGvZ6nDqE3XZiWYuuGukui\nW8zr2QgVNSeEhaGor7aJszulQf/h0MPGzvsaJ6fkgQKBgQDj0eFeq1q2cG6grxc+\n48wFvcTUsl7ii/pjMV87C0ZI5w7Mjpt7G2sc9r8wyBphGK8pBYHoc40yitBq/Dwl\nETajtqpIuelYFUd6arWcb7JD5Cyhdyg3B9Bzs/z6mDk0lLN4dFehP0hUFQnwAf+W\nAt5XWaGfrwRwxM7VFOhXXfwUTQKBgQDX2afuFkVOTCQ0+0rtDzPecVBHqFr1prIz\ndNnKZE4IH1cksUlhg/ajKS8lcnM3WWpCGgFF1alpLGrzbj15Lji8DWBdWH1w54v0\nWuu+uPxHE4WrT2rHe3I9IY3CHPmMJV7Iifr9yL3/6Cbnhjnv0+GLLeRSlLzMPqku\nnwZ7K/ZAUwKBgBXfTJfeM7NYUAa1SLINBMV4VrFk/p8ZeUyUrOPqTTEqnc0d0+eZ\n1krNlcWFMKMpz4dMtBAxJ9k2YpQi61NTt784Blk9IB4IzPf/zrfaMW87NN27puzB\nn028dglJHBTkQebKpK8ieDs6Wd3lEzi/xcD1JgNCtlZtTr4+Z6AbsdvxAoGABO1a\n//xSKK9kRDFYTIEEVheQFZKqQOFFQBdywUP45AaTHqtNWYSBpMfT467xIlpQKqId\nVVLDQztYVaY2kQWVFfXYNUlH08P1VeadawUd/SFc88QkU9llii+x5LR0ndZci4da\ny2BBtg2+lZpiyC61/09U3u22QZNMmVvX8gfW3zECgYEAsbnqvnGxmBAHcjXed5TU\nrh5ZVGrwmkDq+IcCQsbUQiCl5XJ0WW+RebNp4oVdocjzBEvTNdW5JBkGaA1sNAQl\naJSrspy1EBKsfwJ+6/HYDvrBpuZcB8YFtSobK9EjWEYp9hIurC1G8TXXxwuy/jxP\nLOU09wXJ+jKDjCfk98vHzxg=\n-----END PRIVATE KEY-----\n",
+  "private_key_id": "",
+  "private_key": "",
   "client_email": "yollawebe-service@yollawebe-second.iam.gserviceaccount.com",
-  "client_id": "110436462737816409461",
+  "client_id": "",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
