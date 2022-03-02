@@ -38,12 +38,6 @@ namespace data.Concrete.EfCore
         public DbSet<Projects> Projects { get; set; }
 
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-            
-        //    //optionsBuilder.UseSqlServer(@"Server=DESKTOP-RAIEOA1\SQLEXPRESS;Database=isik.db;Trusted_Connection=True;");
-        //    optionsBuilder.UseSqlServer(@"Server=DESKTOP-RAIEOA1\SQLEXPRESS;Database=web.db;Trusted_Connection=True;");
-        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
