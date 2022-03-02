@@ -51,7 +51,7 @@ namespace web
         {
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnetion")), ServiceLifetime.Transient);
             services.AddDbContext<ShopContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnetion")));
-            //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(@"Server=94.73.145.8;Database=u9717840_db859;User Id=u9717840_user859;Password=FVib39N4GMpi33M;"), ServiceLifetime.Transient);
+            //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer();
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 
             // Add Response compression services
@@ -93,7 +93,7 @@ namespace web
                 options.Cookie = new CookieBuilder
                 {
                     HttpOnly = true,
-                    Name = ".isik.security.cookie",
+                    Name = ".yollawebe.security.cookie",
                     SameSite = SameSiteMode.Strict
                 };
             });
@@ -103,16 +103,7 @@ namespace web
 
 
 
-            //services.AddScoped<IProductRepository, EfCoreProductRepository>();
-            //services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
-            //services.AddScoped<IContactRepository, EfCoreContactRepository>();
-            //services.AddScoped<IDokumanRepository, EfCoreDokumanRepository>();
-            //services.AddScoped<IDokumanCategoryRepository, EfCoreDokumanCategoryRepository>();
-            //services.AddScoped<IKariyerRepository, EfCoreKariyerRepository>();
-            //services.AddScoped<INewsRepository, EfCoreNewsRepository>();
-            //services.AddScoped<IProjectGaleryRepository, EfCoreProjectGaleryRepository>();
-            //services.AddScoped<IUygulamalarRepository, EfCoreUygulamalarRepository>();
-            //services.AddScoped<IProjectsRepository, EfCoreProjectsRepository>();
+   
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductService, ProductManager>();                  
