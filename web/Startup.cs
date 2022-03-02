@@ -188,7 +188,7 @@ namespace web
             }
 
             // find the user with the admin email 
-            var _user = await UserManager.FindByEmailAsync("inquiry@isikplastik.com");
+            var _user = await UserManager.FindByEmailAsync("");
 
             // check if the user exists
             if (_user == null)
@@ -196,10 +196,10 @@ namespace web
                 //Here you could create the super admin who will maintain the web app
                 var poweruser = new User
                 {
-                    UserName = "isik.admin",
-                    Email = "inquiry@isikplastik.com",
+                    UserName = "",
+                    Email = "",
                 };
-                string adminPassword = "2021Turkey!!";
+                string adminPassword = "";
 
                 var createPowerUser = await UserManager.CreateAsync(poweruser, adminPassword);
                 if (createPowerUser.Succeeded)
