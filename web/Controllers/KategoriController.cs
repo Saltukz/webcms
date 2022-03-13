@@ -37,7 +37,7 @@ namespace web.Controllers
         }
 
 
-        public IActionResult Details(string url)
+        public async Task<IActionResult> DetailsAsync(string url)
         {
             if (string.IsNullOrEmpty(url))
             {
@@ -58,8 +58,8 @@ namespace web.Controllers
 
 
             var code = category1.Code;
-            Category category2 = _categoryService.GetAll()
-                .Where(i => i.Culture == culture.Name && i.Code == code).FirstOrDefault();
+            var category2 = await _categoryService.GetAll();
+            var category2last =category2.Where(i => i.Culture == culture.Name && i.Code == code).FirstOrDefault();
 
 
             var bigViewModel = new BigViewModel()
@@ -67,7 +67,7 @@ namespace web.Controllers
 
                 CategoryModel = new CategoryModel()
                 {
-                    category = category2,
+                    category = category2last,
                     products = _productService.GetProductsbyCategory(url)
                     //products = _productService.GetAll()
                     

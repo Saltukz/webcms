@@ -4,6 +4,7 @@ using entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Concrete
 {
@@ -27,9 +28,9 @@ namespace business.Concrete
             _unitOfWork.Save();
         }
 
-        public List<News> GetAll()
+        public async Task<List<News>> GetAll()
         {
-           return _unitOfWork.News.GetAll();
+           return await _unitOfWork.News.GetAll();
         }
 
         public List<Tuple<string, string>> GetTuple()
@@ -37,9 +38,9 @@ namespace business.Concrete
             return _unitOfWork.News.GetTuple();
         }
 
-        public News GetById(int id)
+        public async Task<News> GetById(int id)
         {
-            return _unitOfWork.News.GetById(id);
+            return await _unitOfWork.News.GetById(id);
         }
 
         public List<News> GetByPageSize(int page, int pageSize)

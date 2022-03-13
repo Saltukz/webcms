@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Abstract
 {
     public interface IDokumanCategoryService
     {
-        DokumanCategory GetById(int id);
+        Task<DokumanCategory> GetById(int id);
 
-        List<DokumanCategory> GetAll();
+        Task<List<DokumanCategory>> GetAll();
 
         void Create(DokumanCategory entity);
 

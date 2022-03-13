@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace data.Concrete.EfCore
 {
@@ -21,6 +22,14 @@ namespace data.Concrete.EfCore
         {
             get { return context as ShopContext; }
         }
+
+        public async Task<Product> CreateAsync(Product entity)
+        {
+            await context.Set<Product>().AddAsync(entity);
+            await context.SaveChangesAsync();
+            return entity;
+        }
+
         public void CreateRaw(Product entity, int[] thermoformCategoryIds)
         {
            

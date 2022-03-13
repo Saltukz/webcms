@@ -4,6 +4,7 @@ using entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Concrete
 {
@@ -27,14 +28,14 @@ namespace business.Concrete
             _unitOfWork.Save();
         }
 
-        public List<ProjectGalery> GetAll()
+        public async Task<List<ProjectGalery>> GetAll()
         {
-            return _unitOfWork.ProjectGaleries.GetAll();
+            return await _unitOfWork.ProjectGaleries.GetAll();
         }
 
-        public ProjectGalery GetById(int id)
+        public async Task<ProjectGalery> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.ProjectGaleries.GetById(id);
         }
 
         public List<ProjectGalery> GetGalleryByProject(string pcode, string culture)

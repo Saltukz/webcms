@@ -2,12 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace data.Abstract
 {
     public interface IProductRepository:IRepository<Product>
     {
         Product GetByCodeandCulture(int code,string culture);
+
+        Task<Product> CreateAsync(Product entity);
 
         List<Product> GetProductsbyCategory(string url);
         List<Product> GetByPageSize(int page, int pageSize);

@@ -4,6 +4,7 @@ using entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Concrete
 {
@@ -29,16 +30,16 @@ namespace business.Concrete
         }
 
      
-        public List<Uygulama> GetAll()
+        public async Task<List<Uygulama>> GetAll()
         {
-            return _unitOfWork.Uygulamalar.GetAll();
+            return await _unitOfWork.Uygulamalar.GetAll();
         }
 
        
 
-        public Uygulama GetById(int id)
+        public async Task<Uygulama> GetById(int id)
         {
-            return _unitOfWork.Uygulamalar.GetById(id);
+            return await _unitOfWork.Uygulamalar.GetById(id);
         }
 
         public List<Uygulama> GetByPageSize(int page, int pageSize)

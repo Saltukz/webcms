@@ -42,24 +42,34 @@ namespace web.ViewComponents
             _projectGaleryService = projectGaleryService;
 
         }
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
 
             var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
             // Culture contains the information of the requested culture
             var culture = rqf.RequestCulture.Culture;
 
+            var kategoriler = await _categoryService.GetAll();
+            var kategorilerlast = kategoriler.Where(i => i.Culture == culture.Name).ToList();
+
+            var projeler = await _projectsService.GetAll();
+
+
+            var projegaleriler = await _projectGaleryService.GetAll();
+            var projegalerilerlast = projegaleriler.Where(i => i.Culture == culture.Name).ToList();
+
             var layoutModel = new LayoutModel()
             {
-                categories = _categoryService.GetAll()
-                .Where(i => i.Culture == culture.Name).ToList(),
-                //  categories = _categoryService.GetAllByCulture(culture.Name),
+                categories = kategorilerlast,
+                
+               
+
                 uygulamalar = _uygulamalarService.GetAllByCulture(culture.Name),
 
-                projects = _projectsService.GetAll(),
+                projects = projeler,
 
-                projectGaleries = _projectGaleryService.GetAll()
-                .Where(i => i.Culture == culture.Name).ToList()
+                projectGaleries = projegalerilerlast
+
 
             };
 

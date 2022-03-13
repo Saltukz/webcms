@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Abstract
 {
     public interface IContactService
     {
-        Contact GetById(int id);
+        Task<Contact> GetById(int id);
 
-        List<Contact> GetAll();
+        Task<List<Contact>> GetAll();
 
         void Create(Contact entity);
 

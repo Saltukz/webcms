@@ -35,7 +35,7 @@ namespace web.Controllers
         }
 
 
-        public IActionResult Details(string seo)
+        public async Task<IActionResult> DetailsAsync(string seo)
         {
             if (string.IsNullOrEmpty(seo))
             {
@@ -56,19 +56,19 @@ namespace web.Controllers
 
 
             var code = uygulamalar1.Code;
-            Uygulama uygulama = _uygulamalarService.GetAll()
-                .Where(i => i.Culture == culture.Name && i.Code == code).FirstOrDefault();
+            var uygulamalar = await _uygulamalarService.GetAll();
+            var uygulamalarlast = uygulamalar.Where(i => i.Culture == culture.Name && i.Code == code).FirstOrDefault();
 
 
-            
-               
+
+
             var bigViewModel = new BigViewModel()
             {
 
 
                 UygulamalarModel = new UygulamalarModel()
                 {
-                    uygulama = uygulama
+                    uygulama = uygulamalarlast
                     // plastikKullanimAlanlari = _plastikKullanimAlaniService.GetProductsbyCategory(plastikLevhalar1.Code,culture.Name)
                     //products = _productService.GetAll()
 
@@ -84,7 +84,7 @@ namespace web.Controllers
 
         }
 
-        public IActionResult List()
+        public async Task<IActionResult> ListAsync()
         {
 
 
@@ -92,8 +92,8 @@ namespace web.Controllers
             // Culture contains the information of the requested culture
             var culture = rqf.RequestCulture.Culture;
 
-            var uygulamalar = _uygulamalarService.GetAll()
-                .Where(i => i.Culture == culture.Name).ToList();
+            var uygulamalar = await _uygulamalarService.GetAll();
+            uygulamalar.Where(i => i.Culture == culture.Name).ToList();
 
             var bigViewModel = new BigViewModel()
             {

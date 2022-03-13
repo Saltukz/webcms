@@ -29,6 +29,8 @@ namespace web.Models
 
         public string returnUrl { get; set; }
 
+        public List<Product> products { get; set; }
+
       
     }
 }

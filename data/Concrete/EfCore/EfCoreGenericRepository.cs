@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace data.Concrete.EfCore
 {
@@ -25,6 +26,8 @@ namespace data.Concrete.EfCore
             
         }
 
+        
+
         public void Delete(TEntity entity)
         {
             
@@ -33,17 +36,17 @@ namespace data.Concrete.EfCore
             
         }
 
-        public List<TEntity> GetAll()
+        public async Task<List<TEntity>> GetAll()
         {
            
-                return context.Set<TEntity>().ToList();
+                return await context.Set<TEntity>().ToListAsync();
             
         }
 
-        public TEntity GetById(int id)
+        public async Task<TEntity> GetById(int id)
         {
             
-                return context.Set<TEntity>().Find(id);
+                return await context.Set<TEntity>().FindAsync(id);
           
         }
 
@@ -55,6 +58,6 @@ namespace data.Concrete.EfCore
             
         }
 
-
+     
     }
 }

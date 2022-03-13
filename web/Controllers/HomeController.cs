@@ -24,6 +24,7 @@ using AspNetCore.SEOHelper.Sitemap;
 using DNTCaptcha.Core;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Configuration;
+using System.Net.Http;
 
 namespace web.Controllers
 {
@@ -80,18 +81,18 @@ namespace web.Controllers
      
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
           
 
             var list = new List<SitemapNode>();
 
 
-            var levhalar = _uygulamalarService.GetAll();
+            var levhalar = await _uygulamalarService.GetAll();
 
-            var thermoformCategory = _categoryService.GetAll();
+            var thermoformCategory = await _categoryService.GetAll();
 
-            var haberler = _newsService.GetAll();
+            var haberler = await _newsService.GetAll();
 
             foreach (var levha in levhalar)
             {
@@ -133,6 +134,27 @@ namespace web.Controllers
 
 
             return View();
+        }
+
+
+        public async Task<IActionResult> GetProductsFromRestApi()
+        {
+            var products = new List<Product>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:44329/api/products"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
+                }
+            }
+
+            var model = new BigViewModel()
+            {
+                products = products
+            };
+
+                return View(model);
         }
 
         [Route("/Home/HandleError/{code:int}")]

@@ -39,7 +39,7 @@ namespace web.Controllers
 
 
         }
-        public IActionResult List(string pcode)
+        public async Task<IActionResult> ListAsync(string pcode)
         {
             
             if (string.IsNullOrEmpty(pcode))
@@ -61,8 +61,8 @@ namespace web.Controllers
 
 
             //   var code = proje.Code;
-            var proje1 = _projectGaleryService.GetAll()
-                .Select(p => p.Code).Distinct().ToList();
+            var proje1 = await _projectGaleryService.GetAll();
+            proje1.Select(p => p.Code).Distinct().ToList();
 
             var menuList = _projectGaleryService.GetGalleryByProject(pcode, culture.Name)
                .Select(p => p.ProjeAlani).Distinct().ToList();

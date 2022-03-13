@@ -4,6 +4,7 @@ using entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Concrete
 {
@@ -27,14 +28,14 @@ namespace business.Concrete
             _unitOfWork.Save();
         }
 
-        public List<Kariyer> GetAll()
+        public async Task<List<Kariyer>> GetAll()
         {
-            return _unitOfWork.Kariyerler.GetAll();
+            return await _unitOfWork.Kariyerler.GetAll();
         }
 
-        public Kariyer GetById(int id)
+        public async Task<Kariyer> GetById(int id)
         {
-            return _unitOfWork.Kariyerler.GetById(id);
+            return await _unitOfWork.Kariyerler.GetById(id);
         }
 
         public List<Kariyer> GetByPageSize(int page, int pageSize)

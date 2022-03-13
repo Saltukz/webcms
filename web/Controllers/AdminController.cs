@@ -84,128 +84,128 @@ namespace web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            // Specify the urls for which we want analytics data (we only supply the path for each url because the domain can be obtained from the project_id of your GA API Key)
-            var filtersExpression = "ga:pagePath==/hakkimizda,ga:pagePath==/yatirimci-iliskileri"; // each url path is separated by a comma
+            //// Specify the urls for which we want analytics data (we only supply the path for each url because the domain can be obtained from the project_id of your GA API Key)
+            //var filtersExpression = "ga:pagePath==/hakkimizda,ga:pagePath==/yatirimci-iliskileri"; // each url path is separated by a comma
 
-            // Specify the date range for which we want analytics data
-            var dateRange = new DateRange
-            {
+            //// Specify the date range for which we want analytics data
+            //var dateRange = new DateRange
+            //{
 
-                StartDate = "2021-01-01",
+            //    StartDate = "2021-01-01",
 
-                EndDate = "2021-03-14"
+            //    EndDate = "2021-03-14"
 
-            };
+            //};
 
-            // Specify the dimensions we want metrics for
-            var dimensions = new List<Dimension>
-             {
+            //// Specify the dimensions we want metrics for
+            //var dimensions = new List<Dimension>
+            // {
 
-            new Dimension { Name = "ga:pagePath" },
+            //new Dimension { Name = "ga:pagePath" },
 
-            new Dimension { Name = "ga:pageTitle" }
+            //new Dimension { Name = "ga:pageTitle" }
 
-            };
+            //};
 
-            // Specify the metrics we are interested in
-            var metrics = new List<Metric>
-             {
+            //// Specify the metrics we are interested in
+            //var metrics = new List<Metric>
+            // {
 
-            new Metric { Expression = "ga:pageViews" },
+            //new Metric { Expression = "ga:pageViews" },
 
-            new Metric { Expression = "ga:users" }
+            //new Metric { Expression = "ga:users" }
 
-             };
+            // };
 
-            // Create a ReportRequest object for the above urls, date range, dimensions & metrics
-            var reportRequest = new ReportRequest
+            //// Create a ReportRequest object for the above urls, date range, dimensions & metrics
+            //var reportRequest = new ReportRequest
 
-            {
+            //{
                 
-                DateRanges = new List<DateRange> { dateRange }, // it is possible to specify multiple date ranges.
-                Dimensions = dimensions,
+            //    DateRanges = new List<DateRange> { dateRange }, // it is possible to specify multiple date ranges.
+            //    Dimensions = dimensions,
 
-                Metrics = metrics,
+            //    Metrics = metrics,
 
-               FiltersExpression = filtersExpression,
+            //   FiltersExpression = filtersExpression,
 
-                ViewId = "ga:239523416" // a ReportRequest must contain a ViewId (also called a ReportId) from which the data are collected. See appendix below for instructions how to find your Google Analytics viewId
-            };
-
-
-
-            // Collect all ReportRequest objects in a single GetReportsRequest object (we have created only 1 ReportRequest object, but we can have up to 5 in a single API call)
-            var getReportsRequest = new GetReportsRequest
-            {
-                ReportRequests = new List<ReportRequest> { reportRequest }
-            };
+            //    ViewId = "ga:239523416" // a ReportRequest must contain a ViewId (also called a ReportId) from which the data are collected. See appendix below for instructions how to find your Google Analytics viewId
+            //};
 
 
 
-            // Load our Google Analytics API Key file to create a GoogleCredential for Google Analytics API authorization
-            var pathGAKey = Path.Combine(_webHostEnvironment.ContentRootPath, "ga-api-key.json");
-
-            var credential = GetGoogleCredential(pathGAKey);
-
-            // Create an AnalyticsReportingService object to make the Google Analytics API call
-            var analyticsService = new AnalyticsReportingService(new BaseClientService.Initializer
-
-            {
-
-                ApplicationName = "yollawebe", // The Google Analytics project that we target (however this is also in the API Key)
-                HttpClientInitializer = credential // Access to the target Google Analytics project
-            });
+            //// Collect all ReportRequest objects in a single GetReportsRequest object (we have created only 1 ReportRequest object, but we can have up to 5 in a single API call)
+            //var getReportsRequest = new GetReportsRequest
+            //{
+            //    ReportRequests = new List<ReportRequest> { reportRequest }
+            //};
 
 
 
-            // Using our AnalyticsReportingService object we create a BatchGetRequest object, which will contain our batch (in our case only 1) of ReportRequests as well as target GA Project and necessary credentials to access that GA Project.
-            var batchGetRequest = analyticsService.Reports.BatchGet(getReportsRequest);
+            //// Load our Google Analytics API Key file to create a GoogleCredential for Google Analytics API authorization
+            //var pathGAKey = Path.Combine(_webHostEnvironment.ContentRootPath, "ga-api-key.json");
+
+            //var credential = GetGoogleCredential(pathGAKey);
+
+            //// Create an AnalyticsReportingService object to make the Google Analytics API call
+            //var analyticsService = new AnalyticsReportingService(new BaseClientService.Initializer
+
+            //{
+
+            //    ApplicationName = "yollawebe", // The Google Analytics project that we target (however this is also in the API Key)
+            //    HttpClientInitializer = credential // Access to the target Google Analytics project
+            //});
 
 
 
-            // On the BatchGetRequest object invoke the actual Google Analytics API call.
-            var getReportsResponse = await batchGetRequest.ExecuteAsync();
+            //// Using our AnalyticsReportingService object we create a BatchGetRequest object, which will contain our batch (in our case only 1) of ReportRequests as well as target GA Project and necessary credentials to access that GA Project.
+            //var batchGetRequest = analyticsService.Reports.BatchGet(getReportsRequest);
 
 
 
-            // The GetReportsResponse object send from Google Analytics API contains a Reports list (1 report for each ReportRequest object we send)
-            var analyticsData = getReportsResponse.Reports[0].Data;
+            //// On the BatchGetRequest object invoke the actual Google Analytics API call.
+            //var getReportsResponse = await batchGetRequest.ExecuteAsync();
 
 
 
-            /*
-
-             * Here I use a class, AnalyticsViewModel, that for this Hello World example can look like this :
-
-             * public class AnalyticsViewModel
-
-             * {
-
-             *    public List<ReportRow> AnalyticsRecords { get; set; }
-
-             * }
-
-             */
-
-            var model = new AnalyticsViewModel();
-            if (analyticsData.Rows != null)
-
-            {
-
-                model.AnalyticsRecords = analyticsData.Rows.ToList();
-
-            }
-
-            else // No data was send from Google Analytics API, so pass an empty list to the client.
-            {
-
-                model.AnalyticsRecords = new List<ReportRow>();
-
-            }
+            //// The GetReportsResponse object send from Google Analytics API contains a Reports list (1 report for each ReportRequest object we send)
+            //var analyticsData = getReportsResponse.Reports[0].Data;
 
 
 
-            return View(model);
+            ///*
+
+            // * Here I use a class, AnalyticsViewModel, that for this Hello World example can look like this :
+
+            // * public class AnalyticsViewModel
+
+            // * {
+
+            // *    public List<ReportRow> AnalyticsRecords { get; set; }
+
+            // * }
+
+            // */
+
+            //var model = new AnalyticsViewModel();
+            //if (analyticsData.Rows != null)
+
+            //{
+
+            //    model.AnalyticsRecords = analyticsData.Rows.ToList();
+
+            //}
+
+            //else // No data was send from Google Analytics API, so pass an empty list to the client.
+            //{
+
+            //    model.AnalyticsRecords = new List<ReportRow>();
+
+            //}
+
+
+
+            return View();
         }
 
         static GoogleCredential GetGoogleCredential(string pathGAKey)
@@ -236,14 +236,14 @@ namespace web.Controllers
 
         #region Kariyer
 
-        public IActionResult KariyerList(int page = 1)
+        public async Task<IActionResult> KariyerListAsync(int page = 1)
         {
             const int pageSize = 10;
 
 
-            var basvurular = _kariyerService.GetAll();
+            var basvurular = await  _kariyerService.GetAll();
 
-
+            
 
             var model = new KariyerModel()
             {
@@ -265,9 +265,9 @@ namespace web.Controllers
 
 
         [HttpPost]
-        public IActionResult deleteCv(int id)
+        public async Task<IActionResult> deleteCvAsync(int id)
         {
-            var entity = _kariyerService.GetById(id);
+            var entity = await _kariyerService.GetById(id);
 
             if (entity != null)
             {
@@ -281,12 +281,12 @@ namespace web.Controllers
 
         #region İletisim
 
-        public IActionResult iletisim(int page = 1)
+        public async Task<IActionResult> iletisimAsync(int page = 1)
         {
             const int pageSize = 10;
 
 
-            var iletisim = _contactService.GetAll();
+            var iletisim = await  _contactService.GetAll();
 
 
 
@@ -311,12 +311,12 @@ namespace web.Controllers
         #region News
 
 
-        public IActionResult News(int page = 1)
+        public async Task<IActionResult> NewsAsync(int page = 1)
         {
             const int pageSize = 10;
 
 
-            var haberler = _newsService.GetAll();
+            var haberler = await _newsService.GetAll();
 
 
             var model = new HaberlerModel()
@@ -418,9 +418,9 @@ namespace web.Controllers
         }
 
         [HttpPost]
-        public IActionResult deletehaber(int haberId)
+        public async Task<IActionResult> deletehaberAsync(int haberId)
         {
-            var entity = _newsService.GetById(haberId);
+            var entity = await _newsService.GetById(haberId);
 
             if (entity != null)
             {
@@ -430,14 +430,14 @@ namespace web.Controllers
             return RedirectToAction("News");
         }
 
-        public IActionResult EditNews(int? id)
+        public async Task<IActionResult> EditNewsAsync(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var entity = _newsService.GetById((int)id);
+            var entity = await _newsService.GetById((int)id);
 
             if (entity == null)
             {
@@ -468,7 +468,7 @@ namespace web.Controllers
         public async Task<IActionResult> EditNewsSubmit(HaberlerModel model, IFormFile file)
         {
 
-            var entity = _newsService.GetById(model.NewsId);
+            var entity = await _newsService.GetById(model.NewsId);
 
             if (entity == null)
             {
@@ -522,11 +522,12 @@ namespace web.Controllers
 
         }
 
-        public IActionResult AddLanguageToNews(HaberlerModel model)
+        public async Task<IActionResult> AddLanguageToNewsAsync(HaberlerModel model)
         {
 
-            var kodlar = _newsService.GetAll()
-                .Select(x => x.Code).Distinct().ToList();
+            var kodlar = await _newsService.GetAll();
+            var kodlarlast= kodlar.Select(x => x.Code).Distinct().ToList();
+
 
             //var sozluk = _newsService.GetAll()
             //    .ToDictionary(x => x.Code, x => x.Culture);
@@ -563,7 +564,7 @@ namespace web.Controllers
 
             var model2 = new HaberlerModel()
             {
-                Codes = kodlar,
+                Codes = kodlarlast,
                 AllCultures = liste
             };
 
@@ -670,12 +671,12 @@ namespace web.Controllers
         #region DokumanMerkezi
 
 
-        public IActionResult DokumanKategori(int page = 1)
+        public async Task<IActionResult> DokumanKategoriAsync(int page = 1)
         {
             const int pageSize = 10;
 
 
-            var kategoriler = _dokumanCategoryService.GetAll();
+            var kategoriler = await _dokumanCategoryService.GetAll();
 
 
             var model = new DokumanModel()
@@ -740,11 +741,11 @@ namespace web.Controllers
         }
 
 
-        public IActionResult DokumanKategoriLangAdd(DokumanModel model)
+        public async Task<IActionResult> DokumanKategoriLangAddAsync(DokumanModel model)
         {
 
-            var kodlar = _dokumanCategoryService.GetAll()
-               .Select(x => x.Code).Distinct().ToList();
+            var kodlar = await _dokumanCategoryService.GetAll();
+            var kodlarlast = kodlar.Select(x => x.Code).Distinct().ToList();
 
             string[] lanugage = new string[]
            {
@@ -774,7 +775,7 @@ namespace web.Controllers
 
             var model2 = new DokumanModel()
             {
-                Codes = kodlar,
+                Codes = kodlarlast,
                 AllCultures = liste
             };
 
@@ -838,9 +839,9 @@ namespace web.Controllers
         }
 
         [HttpPost]
-        public IActionResult deletedokumankategori(int categoryid)
+        public async Task<IActionResult> deletedokumankategoriAsync(int categoryid)
         {
-            var entity = _dokumanCategoryService.GetById(categoryid);
+            var entity = await _dokumanCategoryService.GetById(categoryid);
 
             if (entity != null)
             {
@@ -852,7 +853,7 @@ namespace web.Controllers
         }
 
 
-        public IActionResult DokumanKategoriEdit(int? id)
+        public async Task<IActionResult> DokumanKategoriEditAsync(int? id)
         {
 
             if (id == null)
@@ -860,7 +861,7 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var entity = _dokumanCategoryService.GetById((int)id);
+            var entity = await _dokumanCategoryService.GetById((int)id);
 
             if (entity == null)
             {
@@ -886,10 +887,10 @@ namespace web.Controllers
 
 
         [HttpPost]
-        public IActionResult EditDokumanCategorySubmit(DokumanModel model)
+        public async Task<IActionResult> EditDokumanCategorySubmitAsync(DokumanModel model)
         {
 
-            var entity = _dokumanCategoryService.GetById(model.DokumanCategoryId);
+            var entity = await _dokumanCategoryService.GetById(model.DokumanCategoryId);
 
             if (entity == null)
             {
@@ -922,12 +923,12 @@ namespace web.Controllers
 
         #region Dokumanlar
 
-        public IActionResult Dokumanlar(int page = 1)
+        public async Task<IActionResult> DokumanlarAsync(int page = 1)
         {
             const int pageSize = 10;
 
 
-            var dokumanlar = _dokumanService.GetAll();
+            var dokumanlar = await _dokumanService.GetAll();
 
 
 
@@ -951,10 +952,10 @@ namespace web.Controllers
 
 
 
-        public IActionResult DokumanAdd()
+        public async Task<IActionResult> DokumanAddAsync()
         {
-            var dokumancategories = _dokumanCategoryService.GetAll()
-                .Where(z => z.Culture == "tr").ToList();
+            var dokumancategories = await _dokumanCategoryService.GetAll();
+            dokumancategories.Where(z => z.Culture == "tr").ToList();
 
             var model = new DokumanModel()
             {
@@ -1032,9 +1033,9 @@ namespace web.Controllers
 
 
         [HttpPost]
-        public IActionResult deletedokuman(int id)
+        public async Task<IActionResult> deletedokumanAsync(int id)
         {
-            var entity = _dokumanService.GetById(id);
+            var entity = await _dokumanService.GetById(id);
 
             if (entity != null)
             {
@@ -1046,14 +1047,15 @@ namespace web.Controllers
         }
 
 
-        public IActionResult DokumanLangAdd(DokumanModel model)
+        public async Task<IActionResult> DokumanLangAddAsync(DokumanModel model)
         {
-            var dokumancategories = _dokumanCategoryService.GetAll()
-                .Where(z => z.Culture == "tr").ToList();
+            var dokumancategories = await _dokumanCategoryService.GetAll();
+            dokumancategories.Where(z => z.Culture == "tr").ToList();
 
 
-            var kodlar = _dokumanService.GetAll()
-               .Select(x => x.Code).Distinct().ToList();
+
+            var kodlar = await _dokumanService.GetAll();
+            var kodlarlas = kodlar.Select(x => x.Code).Distinct().ToList();
 
             string[] lanugage = new string[]
            {
@@ -1083,7 +1085,7 @@ namespace web.Controllers
 
             var model2 = new DokumanModel()
             {
-                Codes = kodlar,
+                Codes = kodlarlas,
                 AllCultures = liste,
                 dokumanCategories = dokumancategories
 
@@ -1158,15 +1160,16 @@ namespace web.Controllers
                 //get right category
                 // Debug.Print("denemeadmin");
                 //  var dize = getRightCategory.GetRightCategories(model.DokumanCategoryIds, model.Culture);
-                var lastobje = _dokumanService.GetAll().OrderByDescending(i => i.DokumanId).First();
-                var lastsayi = lastobje.DokumanId;
+                var lastobje = await _dokumanService.GetAll();
+                var lastobjelast = lastobje.OrderByDescending(i => i.DokumanId).First();
+                var lastsayi = lastobjelast.DokumanId;
                 Debug.Print(model.DokumanCategoryIds.ToString());
                 var liste = new List<DokumanCategory>();
                 for (int id = 1; id < lastsayi; id++)
                 {
                     if (model.DokumanCategoryIds.Contains(id))
                     {
-                        var dk = _dokumanCategoryService.GetById(id);
+                        var dk = await _dokumanCategoryService.GetById(id);
                         liste.Add(dk);
                     }
                 }
@@ -1176,11 +1179,11 @@ namespace web.Controllers
                 List<int> liste2 = new List<int>();
                 foreach (var category in liste)
                 {
-                    var right = _dokumanCategoryService.GetAll()
-                         .Where(i => i.Code == category.Code && i.Culture == model.Culture)
+                    var right = await _dokumanCategoryService.GetAll();
+                    var rightlast = right.Where(i => i.Code == category.Code && i.Culture == model.Culture)
                          .FirstOrDefault();
 
-                    liste2.Add(right.DokumanCategoryId);
+                    liste2.Add(rightlast.DokumanCategoryId);
                 }
 
                 foreach (var item in liste2)
@@ -1217,12 +1220,13 @@ namespace web.Controllers
 
         #region Category
 
-        public IActionResult Categories(int page = 1)
+        public async Task<IActionResult> CategoriesAsync(int page = 1)
         {
             const int pageSize = 10;
 
 
-            var kategoriler = _categoryService.GetAll().OrderBy(i => i.Code);
+            var kategoriler = await _categoryService.GetAll();
+            kategoriler.OrderBy(i => i.Code);
 
 
             var model = new CategoryModel()
@@ -1331,11 +1335,11 @@ namespace web.Controllers
 
 
 
-        public IActionResult CategoryLangAdd(CategoryModel model)
+        public async Task<IActionResult> CategoryLangAddAsync(CategoryModel model)
         {
 
-            var kodlar = _categoryService.GetAll()
-               .Select(x => x.Code).Distinct().ToList();
+            var kodlar = await _categoryService.GetAll();
+            var kodlarlaast = kodlar.Select(x => x.Code).Distinct().ToList();
 
             string[] lanugage = new string[]
            {
@@ -1365,7 +1369,7 @@ namespace web.Controllers
 
             var model2 = new CategoryModel()
             {
-                Codes = kodlar,
+                Codes = kodlarlaast,
                 AllCultures = liste
             };
 
@@ -1471,9 +1475,9 @@ namespace web.Controllers
 
 
         [HttpPost]
-        public IActionResult DeleteCategory(int categoryid)
+        public async Task<IActionResult> DeleteCategoryAsync(int categoryid)
         {
-            var entity = _categoryService.GetById(categoryid);
+            var entity = await _categoryService.GetById(categoryid);
 
             if (entity != null)
             {
@@ -1485,7 +1489,7 @@ namespace web.Controllers
         }
 
 
-        public IActionResult CategoryEdit(int? id)
+        public async Task<IActionResult> CategoryEditAsync(int? id)
         {
 
             if (id == null)
@@ -1493,7 +1497,7 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var entity = _categoryService.GetById((int)id);
+            var entity = await _categoryService.GetById((int)id);
 
             if (entity == null)
             {
@@ -1534,7 +1538,7 @@ namespace web.Controllers
         public async Task<IActionResult> EditCategorySubmit(CategoryModel model)
         {
 
-            var entity = _categoryService.GetById(model.CategoryId);
+            var entity = await _categoryService.GetById(model.CategoryId);
 
             if (entity == null)
             {
@@ -1602,14 +1606,14 @@ namespace web.Controllers
 
 
         #region Product
-        public IActionResult Products(int page = 1)
+        public async Task<IActionResult> ProductsAsync(int page = 1)
         {
             const int pageSize = 10;
 
 
-            var products = _productService.GetAll();
+            var products = await _productService.GetAll();
 
-            var categories = _categoryService.GetAll();
+            var categories = await _categoryService.GetAll();
 
             var relation = _productService.GetRelationTable();
             var model = new ProductModel()
@@ -1631,10 +1635,10 @@ namespace web.Controllers
 
         }
 
-        public IActionResult ProductAdd()
+        public async Task<IActionResult> ProductAddAsync()
         {
-            var categories = _categoryService.GetAll()
-                .Where(z => z.Culture == "tr").ToList();
+            var categories = await _categoryService.GetAll();
+            categories.Where(z => z.Culture == "tr").ToList();
 
             var model = new ProductModel()
             {
@@ -1726,9 +1730,9 @@ namespace web.Controllers
 
 
         [HttpPost]
-        public IActionResult deleteproduct(int id)
+        public async Task<IActionResult> deleteproductAsync(int id)
         {
-            var entity = _productService.GetById(id);
+            var entity = await _productService.GetById(id);
 
             if (entity != null)
             {
@@ -1742,7 +1746,7 @@ namespace web.Controllers
 
 
 
-        public IActionResult ProductEdit(int? id)
+        public async Task<IActionResult> ProductEditAsync(int? id)
         {
             if (id == null)
             {
@@ -1752,8 +1756,8 @@ namespace web.Controllers
             var entity = _productService.GetByIdWithCategories((int)id);
 
             // var entity = _productService.GetById((int)id);
-            var categories = _categoryService.GetAll()
-                .Where(z => z.Culture == "tr").ToList();
+            var categories = await  _categoryService.GetAll();
+            categories.Where(z => z.Culture == "tr").ToList();
 
 
             if (entity == null)
@@ -1793,7 +1797,7 @@ namespace web.Controllers
         public async Task<IActionResult> ProductEditMethod(ProductModel model, IFormFile file)
         {
 
-            var entity = _productService.GetById(model.ProductId);
+            var entity = await _productService.GetById(model.ProductId);
 
             if (entity == null)
             {
@@ -1857,12 +1861,13 @@ namespace web.Controllers
         #region Uygulamalar
 
 
-        public IActionResult Uygulamalar(int page = 1)
+        public async Task<IActionResult> UygulamalarAsync(int page = 1)
         {
             const int pageSize = 10;
 
 
-            var kategoriler = _categoryService.GetAll().OrderBy(i => i.Code);
+            var kategoriler = await _categoryService.GetAll();
+            kategoriler.OrderBy(i => i.Code);
 
 
             var model = new UygulamalarBigModel()
@@ -2031,11 +2036,12 @@ namespace web.Controllers
 
 
 
-        public IActionResult UygulamalarLangAdd(UygulamalarBigModel model)
+        public async Task<IActionResult> UygulamalarLangAddAsync(UygulamalarBigModel model)
         {
 
-            var kodlar = _uygulamalarService.GetAll()
-               .Select(x => x.Code).Distinct().ToList();
+            var kodlar = await _uygulamalarService.GetAll();
+            var stringkodlar= kodlar.Select(x => x.Code).Distinct().ToList();
+
 
             string[] lanugage = new string[]
            {
@@ -2065,7 +2071,7 @@ namespace web.Controllers
 
             var model2 = new UygulamalarBigModel()
             {
-                Codes = kodlar,
+                Codes = stringkodlar,
                 AllCultures = liste
             };
 
@@ -2235,9 +2241,9 @@ namespace web.Controllers
 
 
         [HttpPost]
-        public IActionResult DeleteUygulama(int id)
+        public async Task<IActionResult> DeleteUygulamaAsync(int id)
         {
-            var entity = _uygulamalarService.GetById(id);
+            var entity = await _uygulamalarService.GetById(id);
 
             if (entity != null)
             {
@@ -2249,7 +2255,7 @@ namespace web.Controllers
         }
 
 
-        public IActionResult UygulamalarEdit(int? id)
+        public async Task<IActionResult> UygulamalarEditAsync(int? id)
         {
 
             if (id == null)
@@ -2257,7 +2263,7 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var entity = _uygulamalarService.GetById((int)id);
+            var entity = await _uygulamalarService.GetById((int)id);
 
             if (entity == null)
             {
@@ -2295,7 +2301,7 @@ namespace web.Controllers
         public async Task<IActionResult> UygulamalarEditMethod(UygulamalarBigModel model)
         {
 
-            var entity = _uygulamalarService.GetById(model.Id);
+            var entity = await  _uygulamalarService.GetById(model.Id);
 
             if (entity == null)
             {

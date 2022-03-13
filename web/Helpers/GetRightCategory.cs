@@ -19,15 +19,17 @@ namespace web.Helpers
             _dokumanService = dokumanService;
         }
 
-        public int[] GetRightCategories(int[] dize,string culture)
+        public async Task<int[]> GetRightCategoriesAsync(int[] dize,string culture)
         {
             Console.WriteLine("sa");
             var liste = new List<DokumanCategory>();
-            for(int id = 1; id<_dokumanService.GetAll().Count;id++)
+            var dokumanlar = await _dokumanService.GetAll();
+            var count = dokumanlar.Count(); 
+            for (int id = 1; id<count;id++)
             {              
                     if (dize.Contains(id))
                     {
-                        var dk = _dokumanCategoryService.GetById(id);
+                        var dk = await _dokumanCategoryService.GetById(id);
                         liste.Add(dk);
                     }                                    
             }
@@ -36,11 +38,11 @@ namespace web.Helpers
             List<int> liste2 = new List<int>();
             foreach(var category in liste)
             {
-               var right = _dokumanCategoryService.GetAll()
-                    .Where(i => i.Code == category.Code && category.Culture == culture)
+                var right = await _dokumanCategoryService.GetAll();
+                var rightlast= right.Where(i => i.Code == category.Code && category.Culture == culture)
                     .FirstOrDefault();
 
-                liste2.Append(right.DokumanCategoryId);
+                liste2.Append(rightlast.DokumanCategoryId);
             }
 
             int[] rightIds = liste2.ToArray();

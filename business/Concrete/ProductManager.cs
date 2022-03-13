@@ -5,6 +5,7 @@ using entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Concrete
 {
@@ -20,6 +21,13 @@ namespace business.Concrete
         {
             _unitOfWork.Products.Create(entity);
             _unitOfWork.Save();
+        }
+
+        public async Task<Product> CreateAsync(Product entity)
+        {
+            await _unitOfWork.Products.CreateAsync(entity);
+            await _unitOfWork.SaveAsync();
+            return entity;
         }
 
         public void CreateRaw(Product entity, int[] thermoformCategoryIds)
@@ -41,9 +49,9 @@ namespace business.Concrete
             _unitOfWork.Save();
         }
 
-        public List<Product> GetAll()
+        public async Task<List<Product>> GetAll()
         {
-            return _unitOfWork.Products.GetAll();
+            return await _unitOfWork.Products.GetAll();
         }
 
         public Product GetByCodeandCulture(int code, string culture)
@@ -51,9 +59,9 @@ namespace business.Concrete
             throw new NotImplementedException();
         }
 
-        public Product GetById(int id)
+        public async Task<Product> GetById(int id)
         {
-            return _unitOfWork.Products.GetById(id);
+            return await _unitOfWork.Products.GetById(id);
         }
 
         public Product GetByIdWithCategories(int id)

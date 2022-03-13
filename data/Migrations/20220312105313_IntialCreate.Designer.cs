@@ -10,8 +10,8 @@ using data.Concrete.EfCore;
 namespace data.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20210719185342_initialCreate")]
-    partial class initialCreate
+    [Migration("20220312105313_IntialCreate")]
+    partial class IntialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -230,7 +230,9 @@ namespace data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Code")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Culture")
                         .HasColumnType("nvarchar(max)");

@@ -36,7 +36,7 @@ namespace web.Controllers
 
 
         }
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
             
 
@@ -44,10 +44,11 @@ namespace web.Controllers
             // Culture contains the information of the requested culture
             var culture = rqf.RequestCulture.Culture;
 
-           
 
-            var dokumanCategories = _dokumanCategoryService.GetAll()               
-                .Where(i => i.Culture == culture.Name).ToList();
+
+            var dokumanCategories = await _dokumanCategoryService.GetAll();
+            dokumanCategories.Where(i => i.Culture == culture.Name).ToList();
+
 
 
 

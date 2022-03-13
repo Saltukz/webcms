@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\web\\web.csproj": {}
+    "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\web\\web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\business\\business.csproj": {
+    "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\business\\business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\business\\business.csproj",
+        "projectUniqueName": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\business\\business.csproj",
         "projectName": "business",
-        "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\business\\business.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\business\\obj\\",
+        "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\business\\business.csproj",
+        "packagesPath": "C:\\Users\\celou\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\celou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj"
+              "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj": {
+                "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj"
               },
-              "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj"
+              "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj": {
+                "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj"
               }
             }
           }
@@ -61,21 +61,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj": {
+    "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj",
+        "projectUniqueName": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj",
         "projectName": "data",
-        "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\obj\\",
+        "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj",
+        "packagesPath": "C:\\Users\\celou\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\celou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,8 +89,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj"
+              "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj": {
+                "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj"
               }
             }
           }
@@ -137,21 +137,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj": {
+    "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj",
+        "projectUniqueName": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj",
         "projectName": "entity",
-        "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\obj\\",
+        "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj",
+        "packagesPath": "C:\\Users\\celou\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\celou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -209,21 +209,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\web\\web.csproj": {
+    "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\web\\web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\web\\web.csproj",
+        "projectUniqueName": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\web\\web.csproj",
         "projectName": "web",
-        "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\web\\web.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\web\\obj\\",
+        "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\web\\web.csproj",
+        "packagesPath": "C:\\Users\\celou\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\celou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -237,14 +237,14 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\business\\business.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\business\\business.csproj"
+              "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\business\\business.csproj": {
+                "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\business\\business.csproj"
               },
-              "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj"
+              "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj": {
+                "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj"
               },
-              "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj"
+              "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj": {
+                "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj"
               }
             }
           }
@@ -342,7 +342,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

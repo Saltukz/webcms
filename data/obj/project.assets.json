@@ -5817,19 +5817,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\celou\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj",
+      "projectUniqueName": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj",
       "projectName": "data",
-      "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\data.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\data\\obj\\",
+      "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\data.csproj",
+      "packagesPath": "C:\\Users\\celou\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\celou\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5843,8 +5843,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\dotnetcms\\dotnetcms\\entity\\entity.csproj"
+            "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj": {
+              "projectPath": "C:\\Users\\celou\\OneDrive\\Masaüstü\\webcms\\entity\\entity.csproj"
             }
           }
         }
@@ -5891,7 +5891,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Abstract
 {
@@ -10,9 +11,9 @@ namespace business.Abstract
         Uygulama GetBySeoUrl(string seourl);
 
         List<Uygulama> GetAllByCulture(string culture);
-        Uygulama GetById(int id);
+        Task<Uygulama> GetById(int id);
 
-        List<Uygulama> GetAll();
+        Task<List<Uygulama>> GetAll();
 
         void Create(Uygulama entity);
 

@@ -4,6 +4,7 @@ using entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Concrete
 {
@@ -35,9 +36,9 @@ namespace business.Concrete
             _unitOfWork.Save();
         }
 
-        public List<Dokuman> GetAll()
+        public async Task<List<Dokuman>> GetAll()
         {
-           return _unitOfWork.Dokumanlar.GetAll();
+           return await _unitOfWork.Dokumanlar.GetAll();
         }
 
         public List<Dokuman> GetAllWithCategories()
@@ -45,9 +46,9 @@ namespace business.Concrete
             return _unitOfWork.Dokumanlar.GetAllWithCategories();
         }
 
-        public Dokuman GetById(int id)
+        public async Task<Dokuman> GetById(int id)
         {
-            return _unitOfWork.Dokumanlar.GetById(id);
+            return await _unitOfWork.Dokumanlar.GetById(id);
         }
 
         public List<Dokuman> GetByPageSize(int page, int pageSize)

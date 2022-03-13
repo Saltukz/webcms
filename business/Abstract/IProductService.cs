@@ -2,16 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Abstract
 {
     public interface IProductService
     {
-        Product GetById(int id);
+        Task<Product> GetById(int id);
 
-        List<Product> GetAll();
+        Task<List<Product>> GetAll();
+
+        Task<Product> CreateAsync(Product entity);
 
         void Create(Product entity);
+
 
         void Update(Product entity);
 

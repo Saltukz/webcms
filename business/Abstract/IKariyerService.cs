@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Abstract
 {
     public interface IKariyerService
     {
-        Kariyer GetById(int id);
+        Task<Kariyer> GetById(int id);
 
-        List<Kariyer> GetAll();
+        Task<List<Kariyer>> GetAll();
 
         void Create(Kariyer entity);
 

@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Abstract
 {
     public interface ICategoryService
     {
-        Category GetById(int id);
+        Task<Category> GetById(int id);
 
-        List<Category> GetAll();
+        Task<List<Category>> GetAll();
 
         void Create(Category entity);
 

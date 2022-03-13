@@ -2,15 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Abstract
 {
     public interface IProjectsService
     {
 
-        Projects GetById(int id);
+        Task<Projects> GetById(int id);
 
-        List<Projects> GetAll();
+        Task<List<Projects>> GetAll();
 
         void Create(Projects entity);
 

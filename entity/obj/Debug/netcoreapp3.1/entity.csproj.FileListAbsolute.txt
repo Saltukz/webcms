@@ -21,3 +21,16 @@ C:\Users\User\Desktop\dotnetcms\dotnetcms\entity\obj\Debug\netcoreapp3.1\entity.
 C:\Users\User\Desktop\dotnetcms\dotnetcms\entity\obj\Debug\netcoreapp3.1\entity.dll
 C:\Users\User\Desktop\dotnetcms\dotnetcms\entity\obj\Debug\netcoreapp3.1\entity.pdb
 C:\Users\User\Desktop\dotnetcms\dotnetcms\entity\obj\Debug\netcoreapp3.1\entity.genruntimeconfig.cache
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\bin\Debug\netcoreapp3.1\entity.deps.json
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\bin\Debug\netcoreapp3.1\entity.runtimeconfig.json
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\bin\Debug\netcoreapp3.1\entity.runtimeconfig.dev.json
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\bin\Debug\netcoreapp3.1\entity.dll
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\bin\Debug\netcoreapp3.1\entity.pdb
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\obj\Debug\netcoreapp3.1\entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\obj\Debug\netcoreapp3.1\entity.AssemblyInfoInputs.cache
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\obj\Debug\netcoreapp3.1\entity.AssemblyInfo.cs
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\obj\Debug\netcoreapp3.1\entity.csproj.CoreCompileInputs.cache
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\obj\Debug\netcoreapp3.1\entity.dll
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\obj\Debug\netcoreapp3.1\entity.pdb
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\obj\Debug\netcoreapp3.1\entity.genruntimeconfig.cache
+C:\Users\celou\OneDrive\Masaüstü\webcms\entity\obj\Debug\netcoreapp3.1\entity.csproj.AssemblyReference.cache

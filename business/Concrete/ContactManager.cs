@@ -4,6 +4,7 @@ using entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Concrete
 {
@@ -27,14 +28,14 @@ namespace business.Concrete
             _unitofWork.Save();
         }
 
-        public List<Contact> GetAll()
+        public async Task<List<Contact>> GetAll()
         {
-            return _unitofWork.Contacts.GetAll();
+            return await _unitofWork.Contacts.GetAll();
         }
 
-        public Contact GetById(int id)
+        public async Task<Contact> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _unitofWork.Contacts.GetById(id);
         }
 
         public List<Contact> GetByPageSize(int page, int pageSize)

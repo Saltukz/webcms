@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Abstract
 {
     public interface INewsService
     {
-        News GetById(int id);
+        Task<News> GetById(int id);
 
-        List<News> GetAll();
+        Task<List<News>> GetAll();
 
         void Create(News entity);
 

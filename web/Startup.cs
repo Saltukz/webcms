@@ -49,8 +49,8 @@ namespace web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnetion")), ServiceLifetime.Transient);
-            services.AddDbContext<ShopContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnetion")));
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection")));
+            services.AddDbContext<ShopContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection")));
             //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer();
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 
@@ -63,11 +63,14 @@ namespace web
 
             services.Configure<IdentityOptions>(options =>
             {
+
+               
+
                 options.Password.RequireDigit = true;
                 options.Password.RequireLowercase = true;
                 options.Password.RequireUppercase = true;
                 options.Password.RequiredLength = 7;
-                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireNonAlphanumeric = false;
 
                 //locout
 
@@ -78,6 +81,8 @@ namespace web
                 options.User.RequireUniqueEmail = true;
                 options.SignIn.RequireConfirmedEmail = false;
                 options.SignIn.RequireConfirmedPhoneNumber = false;
+
+
 
               
 
@@ -179,7 +184,7 @@ namespace web
             }
 
             // find the user with the admin email 
-            var _user = await UserManager.FindByEmailAsync("");
+            var _user = await UserManager.FindByEmailAsync("info@saltukz.com");
 
             // check if the user exists
             if (_user == null)
@@ -187,10 +192,11 @@ namespace web
                 //Here you could create the super admin who will maintain the web app
                 var poweruser = new User
                 {
-                    UserName = "",
-                    Email = "",
+                    UserName = "saltukz",
+                    Email = "info@saltukz.com",
                 };
-                string adminPassword = "";
+                string adminPassword = "1q2w3e4R";
+              
 
                 var createPowerUser = await UserManager.CreateAsync(poweruser, adminPassword);
                 if (createPowerUser.Succeeded)

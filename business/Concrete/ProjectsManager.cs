@@ -4,6 +4,7 @@ using entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace business.Concrete
 {
@@ -27,9 +28,9 @@ namespace business.Concrete
             _unitOfWork.Save();
         }
 
-        public List<Projects> GetAll()
+        public async Task<List<Projects>> GetAll()
         {
-            return _unitOfWork.Projects.GetAll();
+            return await _unitOfWork.Projects.GetAll();
         }
 
         public Projects GetByCode(string pcode)
@@ -37,9 +38,9 @@ namespace business.Concrete
             return _unitOfWork.Projects.GetByCode(pcode);
         }
 
-        public Projects GetById(int id)
+        public async  Task<Projects> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.Projects.GetById(id);
         }
 
         public void Update(Projects entity)

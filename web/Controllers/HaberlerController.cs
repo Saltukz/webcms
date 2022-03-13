@@ -35,7 +35,7 @@ namespace web.Controllers
 
 
         }
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
 
             var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
@@ -46,7 +46,7 @@ namespace web.Controllers
             //var haberler = _newsService.GetAll()
             //    .Where(i => i.Culture == culture.Name).ToList();
 
-            var haberler = _newsService.GetAll();
+            var haberler = await _newsService.GetAll();
 
 
             var model = new BigViewModel()
@@ -61,7 +61,7 @@ namespace web.Controllers
         }
 
 
-        public IActionResult Details(string seocode)
+        public async Task<IActionResult> DetailsAsync(string seocode)
         {
 
             if (string.IsNullOrEmpty(seocode))
@@ -77,8 +77,9 @@ namespace web.Controllers
 
 
             var code = haber.Code;
-            News haber1 = _newsService.GetAll()
-                .Where(i => i.Culture == culture.Name && i.Code == code).FirstOrDefault();
+            var haber1 = await _newsService.GetAll();
+            haber1.Where(i => i.Culture == culture.Name && i.Code == code).FirstOrDefault();
+
 
             var model = new BigViewModel()
             {

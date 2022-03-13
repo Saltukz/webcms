@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace data.Abstract
 {
@@ -23,6 +24,8 @@ namespace data.Abstract
         IProjectsRepository Projects { get; }
 
         void Save();
+
+        Task<int> SaveAsync();
 
 
     }

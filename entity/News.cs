@@ -27,10 +27,9 @@ namespace entity
 
         public string MetaDescription { get; set; }
 
-       
-
-
-
-
+        public static implicit operator News(List<News> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
